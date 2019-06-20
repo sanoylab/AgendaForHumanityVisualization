@@ -290,12 +290,18 @@
 
         #tab1:checked~#content1,
         #tab2:checked~#content2,
-        #tab3:checked~#content3,
-        #tab4:checked~#content4 {
+        #tab8:checked~#content2,
+        #tab3:checked~#content1,
+        #tab4:checked~#content1,
+        #tab5:checked~#content3,
+        #tab6:checked~#content3,
+        #tab7:checked~#content3        
+        {
             resize: both;
             display: block;
 
         }
+
 
         @media screen and (max-width: 650px) {
             label {
@@ -316,19 +322,21 @@
 
 
         /* Up and Down Arrows */
-.sortable th.descend:after{
-	content: "\25B2";
-	}
-.sortable th.ascend:after{
-	content: "\25BC";
-    }
-    
-    .c3-line {
-    stroke-width: 5px;
-}
-.c3-circle {
-    fill: black !important;
-}
+        .sortable th.descend:after {
+            content: "\25B2";
+        }
+
+        .sortable th.ascend:after {
+            content: "\25BC";
+        }
+
+        .c3-line {
+            stroke-width: 5px;
+        }
+
+        .c3-circle {
+            fill: black !important;
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="src/css/component.css" />
     <script src="src/js/snap.svg-min.js"></script>
@@ -463,12 +471,18 @@
             <main>
 
                 <input id="tab1" type="radio" name="tabs" checked>
-                <label for="tab1"><span class="tab_header"></span></label>
+                <label for="tab1">2019 Visualization</label>
+
+
+
+                <input id="tab3" type="radio" name="tabs">
+                <label for="tab3">2018 Visualization</label>
+
+                <input id="tab4" type="radio" name="tabs">
+                <label for="tab4">2017 Visualization</label>
 
                 <input id="tab2" type="radio" name="tabs">
                 <label for="tab2">Inter Year Analysis</label>
-
-
 
                 <section id="content1">
 
@@ -506,7 +520,8 @@
 
                                 </div>
                             </div>
-
+                            <div class="row"> &nbsp;</div>
+                            <!--
 
                             <div class="row"> &nbsp;</div>
                             <div class="row"> &nbsp;</div>
@@ -528,6 +543,7 @@
                                 </div>
 
                             </div>
+                        -->
                         </div>
                     </div>
 
@@ -609,12 +625,14 @@
                                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
                                                 href="#nav-home" role="tab" aria-controls="nav-home"
                                                 aria-selected="true">
-                                                <h3 class="popup_title text mb-4 text-center" style="color: #2267CD !important;">STAKEHOLDERS</h3>
+                                                <h3 class="popup_title text mb-4 text-center"
+                                                    style="color: #2267CD !important;">STAKEHOLDERS</h3>
                                             </a>
                                             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
                                                 href="#nav-profile" role="tab" aria-controls="nav-profile"
                                                 aria-selected="false">
-                                                <h3 class="popup_title text mb-4 text-center" style="color: #2267CD !important;" id="challenges_header">
+                                                <h3 class="popup_title text mb-4 text-center"
+                                                    style="color: #2267CD !important;" id="challenges_header">
                                                 </h3>
                                             </a>
                                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
@@ -631,7 +649,8 @@
                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                                             aria-labelledby="nav-home-tab">
 
-                                            <div class="container-fluid block-other" style="padding-top:70px;" id="stakeholder">
+                                            <div class="container-fluid block-other" style="padding-top:70px;"
+                                                id="stakeholder">
                                                 <div class="row">
                                                     <div class="col-md-6 col-sm-12">
 
@@ -657,19 +676,21 @@
                                             <div class="container-fluid block" style="padding-top: 70px;">
                                                 <div class="row">
                                                     <div class="container-fluid mx-auto">
-                                                            <h4 class="text mb-4 text-left" style="margin-right: 50px; "></h4>
+                                                        <h4 class="text mb-4 text-left" style="margin-right: 50px; ">
+                                                        </h4>
                                                         <div id="chart_challenges"></div>
                                                     </div>
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
                                         <div class="tab-pane fade" id="nav-contact" role="tabpanel"
                                             aria-labelledby="nav-contact-tab">
                                             <div class="container-fluid block-other" style="padding-top: 70px;">
                                                 <div class="row" id="ccichart">
                                                     <div class="col-lg-12 col-sm-12 mx-auto">
-                                                            <h4 class="text mb-4 text-left" style="margin-right: 50px; "></h4>
+                                                        <h4 class="text mb-4 text-left" style="margin-right: 50px; ">
+                                                        </h4>
                                                         <div id="crosscutting"></div>
                                                     </div>
                                                 </div>
@@ -890,345 +911,364 @@
                                         <div class="tab-content" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="nav-home1" role="tabpanel"
                                                 aria-labelledby="nav-home-tab">
-                                                <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Absolute numbers</h4>
-                                                <div id="chart-stakeholder-bar"></div>
-                                                <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Percent of total reported</h4>
-                                                <div id="chart-stakeholder-line"></div>
-
-
-
+                                                <h4 class="text mb-4 text-left"
+                                                    style="padding-top: 20px; padding-bottom: 20px;"">Absolute numbers</h4>
+                                                <div id=" chart-stakeholder-bar">
                                             </div>
-                                            <div class="tab-pane fade" id="nav-profile1" role="tabpanel"
-                                                aria-labelledby="nav-profile-tab">
-                                                <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Absolute numbers</h4>
-                                                <div id="chart-transformation-bar"></div>
-                                                <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Percent of total reported</h4>
-
-                                                <div style="width: 90% !important;" id="chart_transformation_comp">
-                                                </div>
-
-
-                                            </div>
-                                            <div class="tab-pane fade" id="nav-contact1" role="tabpanel"
-                                                aria-labelledby="nav-contact-tab">
-                                                <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Absolute numbers</h4>
-
-                                                <div id="chart-challenge-bar"></div>
-                                            </div>
+                                            <h4 class="text mb-4 text-left"
+                                                style="padding-top: 20px; padding-bottom: 20px;"">Percent of total reported</h4>
+                                                <div id=" chart-stakeholder-line">
                                         </div>
+
+
+
                                     </div>
+                                    <div class="tab-pane fade" id="nav-profile1" role="tabpanel"
+                                        aria-labelledby="nav-profile-tab">
+                                        <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Absolute numbers</h4>
+                                                <div id=" chart-transformation-bar">
+                                    </div>
+                                    <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Percent of total reported</h4>
+
+                                                <div style=" width: 90% !important;" id="chart_transformation_comp">
                                 </div>
+
+
                             </div>
+                            <div class="tab-pane fade" id="nav-contact1" role="tabpanel"
+                                aria-labelledby="nav-contact-tab">
+                                <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;"">Absolute numbers</h4>
 
-
-
-
+                                                <div id=" chart-challenge-bar">
+                            </div>
                         </div>
                     </div>
-                </section>
-
-
-            </main>
-
-
-
-
-
-
-
-
         </div>
-        <div class="container1" id="page-2">
-            <header id="header" class="">
-                <div id="top-nav">
+    </div>
+    </div>
 
-                </div>
-                <div id="top-search">
-                </div>
-                <div class="google-translate-container">
-                    <div id="google_translate_element">
-                        <div class="skiptranslate goog-te-gadget" dir="ltr" style="">
-                            <div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img
-                                    src="https://www.google.com/images/cleardot.gif" class="goog-te-gadget-icon" alt=""
-                                    style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span
-                                    style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value"
-                                        href="javascript:void(0)"><span>Select Language</span><img
-                                            src="https://www.google.com/images/cleardot.gif" alt="" width="1"
-                                            height="1"><span
-                                            style="border-left: 1px solid rgb(187, 187, 187);">&#8203;</span><img
-                                            src="https://www.google.com/images/cleardot.gif" alt="" width="1"
-                                            height="1"><span aria-hidden="true"
-                                            style="color: rgb(118, 118, 118);">?</span></a></span></div>
-                        </div>
+
+
+
+    </div>
+    </div>
+    </section>
+
+
+    </main>
+
+    </div>
+    <div class="container1" id="page-2">
+        <header id="header" class="">
+            <div id="top-nav">
+
+            </div>
+            <div id="top-search">
+            </div>
+            <div class="google-translate-container">
+                <div id="google_translate_element">
+                    <div class="skiptranslate goog-te-gadget" dir="ltr" style="">
+                        <div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img
+                                src="https://www.google.com/images/cleardot.gif" class="goog-te-gadget-icon" alt=""
+                                style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span
+                                style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value"
+                                    href="javascript:void(0)"><span>Select Language</span><img
+                                        src="https://www.google.com/images/cleardot.gif" alt="" width="1"
+                                        height="1"><span
+                                        style="border-left: 1px solid rgb(187, 187, 187);">&#8203;</span><img
+                                        src="https://www.google.com/images/cleardot.gif" alt="" width="1"
+                                        height="1"><span aria-hidden="true"
+                                        style="color: rgb(118, 118, 118);">?</span></a></span></div>
                     </div>
                 </div>
-                <div class="header-container">
-                    <h1 id="logo">
-                        <a href="/" title="Home">
-                            <img
-                                src="https://www.agendaforhumanity.org/sites/default/files/agendaforhumanity-logo_0_0.png">
-                        </a>
-                    </h1>
+            </div>
+            <div class="header-container">
+                <h1 id="logo">
+                    <a href="/" title="Home">
+                        <img src="https://www.agendaforhumanity.org/sites/default/files/agendaforhumanity-logo_0_0.png">
+                    </a>
+                </h1>
 
 
-                    <button id="btn-search" class="icon-search"></button>
-                    <nav id="navigation" role="navigation" style="padding-top:9px;">
-                        <div class="region region-main-menu">
-                            <div id="block-system-main-menu">
-                                <div class="content">
-                                    <ul class="menu">
-                                        <li class="first leaf"><a href="/">Home</a></li>
-                                        <li class="leaf active-trail"><a
-                                                href="https://www.agendaforhumanity.org/explore-commitments/stakeholder"
-                                                title="">Stakeholders</a></li>
-                                        <li class="expanded"><a
-                                                href="https://www.agendaforhumanity.org/explore-commitments/indv-commitments"
-                                                title="">Commitments</a>
-                                            <ul class="menu">
-                                                <li class="first leaf"><a
-                                                        href="https://www.agendaforhumanity.org/aboutthecommitments">About
-                                                        the Commitments</a></li>
-                                                <li class="leaf"><a
-                                                        href="https://www.agendaforhumanity.org/core-commitments"
-                                                        title="">About the Core Commitments</a></li>
-                                                <li class="last leaf"><a
-                                                        href="https://www.agendaforhumanity.org/explore-commitments/indv-commitments"
-                                                        title="">Explore Commitments</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="expanded"><a
-                                                href="https://www.agendaforhumanity.org/explore-commitments/report-search"
-                                                title="">Reports</a>
-                                            <ul class="menu">
-                                                <li class="first leaf"><a
-                                                        href="https://www.agendaforhumanity.org/report-guidance"
-                                                        title="">Report Guidance</a></li>
-                                                <li class="last leaf"><a
-                                                        href="https://www.agendaforhumanity.org/explore-commitments/report-search"
-                                                        title="">Explore Reports</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="leaf"><a href="https://www.agendaforhumanity.org/initiatives"
-                                                title="">Initiatives</a></li>
-                                        <li class="expanded"><a href="https://www.agendaforhumanity.org/resources"
-                                                title="">Resources</a>
-                                            <ul class="menu">
-                                                <li class="first leaf"><a
-                                                        href="https://www.agendaforhumanity.org/resources/major-reports#annual-synthesis-reports-2018"
-                                                        title="">Annual Synthesis Report 2018</a></li>
-                                                <li class="leaf"><a
-                                                        href="https://www.agendaforhumanity.org/resources/agendaforhumanity"
-                                                        title="">Agenda for Humanity</a></li>
-                                                <li class="leaf"><a
-                                                        href="https://www.agendaforhumanity.org/resources/major-reports#annual-synthesis-reports-2018"
-                                                        title="">Publications</a></li>
-                                                <li class="last leaf"><a href="/resources/world-humanitarian-summit"
-                                                        title="">World Humanitarian Summit</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="expanded"><a href="https://www.agendaforhumanity.org/about-us"
-                                                title="">About</a>
-                                            <ul class="menu">
-                                                <li class="first leaf"><a
-                                                        href="https://www.agendaforhumanity.org/agendaforhumanity"
-                                                        title="">About the Agenda for Humanity</a></li>
-                                                <li class="leaf"><a href="https://www.agendaforhumanity.org/about-us"
-                                                        title="">About Pact</a></li>
-                                                <li class="last leaf"><a href="https://www.agendaforhumanity.org/summit"
-                                                        title="">About the World Humanitarian Summit</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="last leaf"><a href="https://www.agendaforhumanity.org/contact-us"
-                                                title="">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div> <!-- /.block -->
-                        </div>
-                        <!-- /.region -->
-
-
-                    </nav>
-                </div>
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({
-                            pageLanguage: 'en',
-                            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                        }, 'google_translate_element');
-                    }
-                </script>
-                <script type="text/javascript"
-                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            </header>
-            <a data-toggle="modal" class="pdf-button" title="Export to Excel" data-target="#export">
-                <img src="src/img/fa-excel.png" style="width: 50px; padding: 10px;">
-            </a>
-            <a class="viewer-button pageload-link" href="#page-2" title="Tabular View">
-                <img src="src/img/fa-table.png" style="width: 50px; padding: 10px;">
-            </a>
-            <a class="accessibility-button" data-toggle="modal" title="Web Accessibility" data-target="#accessibility">
-                <img src="src/img/fa-wheelchair.png" style="width: 50px; padding: 10px;">
-            </a>
-            <!-- Introduction and Year Selection Section -->
-            <div id="introduction" class="introduction-section text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto ">
-                            <h1 class="text mb-4 main_header"></h1>
-                            <p class="text-50">The Interactive Summary provides an overview of <span
-                                    class="year"></span> reporting by
-                                stakeholders
-                                on implementation of commitments made at or after the World Humanitarian Summit.
-                                Click on the
-                                tabs to explore achievements, challenges and cross-cutting issues by each of the 24
-                                Transformations of the Agenda for Humanity. </p>
-                        </div>
-                    </div>
-
-
-                   
-                    <div class="row">
-                        <div class="container text-center" style="margin-bottom:120px;">
-                            <strong>YEAR: </strong>
-                            <div class="dropdown">
-                                <div class="select">
-                                    <span>Select Year</span>
-                                    <i class="fa fa-chevron-left"></i>
-                                </div>
-                                <input type="hidden" name="gender">
-                                <ul class="dropdown-menu">
-                                    <li id="2016">2017</li>
-                                    <li id="2017">2018</li>
-                                    <li id="2018">2019</li>
+                <button id="btn-search" class="icon-search"></button>
+                <nav id="navigation" role="navigation" style="padding-top:9px;">
+                    <div class="region region-main-menu">
+                        <div id="block-system-main-menu">
+                            <div class="content">
+                                <ul class="menu">
+                                    <li class="first leaf"><a href="/">Home</a></li>
+                                    <li class="leaf active-trail"><a
+                                            href="https://www.agendaforhumanity.org/explore-commitments/stakeholder"
+                                            title="">Stakeholders</a></li>
+                                    <li class="expanded"><a
+                                            href="https://www.agendaforhumanity.org/explore-commitments/indv-commitments"
+                                            title="">Commitments</a>
+                                        <ul class="menu">
+                                            <li class="first leaf"><a
+                                                    href="https://www.agendaforhumanity.org/aboutthecommitments">About
+                                                    the Commitments</a></li>
+                                            <li class="leaf"><a
+                                                    href="https://www.agendaforhumanity.org/core-commitments"
+                                                    title="">About the Core Commitments</a></li>
+                                            <li class="last leaf"><a
+                                                    href="https://www.agendaforhumanity.org/explore-commitments/indv-commitments"
+                                                    title="">Explore Commitments</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="expanded"><a
+                                            href="https://www.agendaforhumanity.org/explore-commitments/report-search"
+                                            title="">Reports</a>
+                                        <ul class="menu">
+                                            <li class="first leaf"><a
+                                                    href="https://www.agendaforhumanity.org/report-guidance"
+                                                    title="">Report Guidance</a></li>
+                                            <li class="last leaf"><a
+                                                    href="https://www.agendaforhumanity.org/explore-commitments/report-search"
+                                                    title="">Explore Reports</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="leaf"><a href="https://www.agendaforhumanity.org/initiatives"
+                                            title="">Initiatives</a></li>
+                                    <li class="expanded"><a href="https://www.agendaforhumanity.org/resources"
+                                            title="">Resources</a>
+                                        <ul class="menu">
+                                            <li class="first leaf"><a
+                                                    href="https://www.agendaforhumanity.org/resources/major-reports#annual-synthesis-reports-2018"
+                                                    title="">Annual Synthesis Report 2018</a></li>
+                                            <li class="leaf"><a
+                                                    href="https://www.agendaforhumanity.org/resources/agendaforhumanity"
+                                                    title="">Agenda for Humanity</a></li>
+                                            <li class="leaf"><a
+                                                    href="https://www.agendaforhumanity.org/resources/major-reports#annual-synthesis-reports-2018"
+                                                    title="">Publications</a></li>
+                                            <li class="last leaf"><a href="/resources/world-humanitarian-summit"
+                                                    title="">World Humanitarian Summit</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="expanded"><a href="https://www.agendaforhumanity.org/about-us"
+                                            title="">About</a>
+                                        <ul class="menu">
+                                            <li class="first leaf"><a
+                                                    href="https://www.agendaforhumanity.org/agendaforhumanity"
+                                                    title="">About the Agenda for Humanity</a></li>
+                                            <li class="leaf"><a href="https://www.agendaforhumanity.org/about-us"
+                                                    title="">About Pact</a></li>
+                                            <li class="last leaf"><a href="https://www.agendaforhumanity.org/summit"
+                                                    title="">About the World Humanitarian Summit</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="last leaf"><a href="https://www.agendaforhumanity.org/contact-us"
+                                            title="">Contact</a></li>
                                 </ul>
                             </div>
+                        </div> <!-- /.block -->
+                    </div>
+                    <!-- /.region -->
+
+
+                </nav>
+            </div>
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript"
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </header>
+
+        <main>
+
+            <input id="tab5" type="radio" name="tabs" checked>
+            <label for="tab5">2019 Visualization</label>
+
+            <input id="tab6" type="radio" name="tabs">
+            <label for="tab6">2018 Visualization</label>
+
+            <input id="tab7" type="radio" name="tabs">
+            <label for="tab7">2017 Visualization</label>
+
+            <input id="tab8" type="radio" name="tabs">
+            <label for="tab8">Inter Year Analysis</label>
+            <section id="content3">
+                <a data-toggle="modal" class="pdf-button" title="Export to Excel" data-target="#export">
+                    <img src="src/img/fa-excel.png" style="width: 50px; padding: 10px;">
+                </a>
+                <a class="viewer-button pageload-link" href="#page-2" title="Tabular View">
+                    <img src="src/img/fa-table.png" style="width: 50px; padding: 10px;">
+                </a>
+                <a class="accessibility-button" data-toggle="modal" title="Web Accessibility"
+                    data-target="#accessibility">
+                    <img src="src/img/fa-wheelchair.png" style="width: 50px; padding: 10px;">
+                </a>
+                <!-- Introduction and Year Selection Section -->
+                <div id="introduction" class="introduction-section text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto ">
+                                <h1 class="text mb-4 main_header"></h1>
+                                <p class="text-50">The Interactive Summary provides an overview of <span
+                                        class="year"></span> reporting by
+                                    stakeholders
+                                    on implementation of commitments made at or after the World Humanitarian Summit.
+                                    Click on the
+                                    tabs to explore achievements, challenges and cross-cutting issues by each of the 24
+                                    Transformations of the Agenda for Humanity. </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="container text-center" style="margin-bottom:120px;">
+                                <strong>YEAR: </strong>
+                                <div class="dropdown">
+                                    <div class="select">
+                                        <span>Select Year</span>
+                                        <i class="fa fa-chevron-left"></i>
+                                    </div>
+                                    <input type="hidden" name="gender">
+                                    <ul class="dropdown-menu">
+                                        <li id="2016">2017</li>
+                                        <li id="2017">2018</li>
+                                        <li id="2018">2019</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="content">
+                <div id="content">
 
 
 
-                <div id="protracted-crisis" class="protracted-crisis-section text-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 mx-auto ">
-                                <h2 class="text mb-4 stakeholder-header" style="padding-top: 20px; "></h2>
+                    <div id="protracted-crisis" class="protracted-crisis-section text-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 mx-auto ">
+                                    <h2 class="text mb-4 stakeholder-header" style="padding-top: 20px; "></h2>
 
-                                <div id="total-stackholder_detail" style="padding-bottom: 50px;"></div>
+                                    <div id="total-stackholder_detail" style="padding-bottom: 50px;"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto ">
+                                    <h2 class="text mb-4 transformation_header"></h2>
+                                    <p class="caption_no_border" data-localize="overview_sources">Click on the
+                                        transformation to see details</p>
+                                    <p>&nbsp;</p>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto ">
-                                <h2 class="text mb-4 transformation_header"></h2>
-                                <p class="caption_no_border" data-localize="overview_sources">Click on the
-                                    transformation to see details</p>
-                                <p>&nbsp;</p>
+                        <div class="block">
+                            <div class="row">
+                                <div class="block">
+                                    <table id="table-transformation">
+                                        <thead>
+                                            <tr class="header-row">
+                                                <td class="country-name"></td>
 
+
+                                                <td class="percentagebar">
+                                                    <span style="float:left;"
+                                                        data-localize="funded_text">Transformation</span>
+
+                                                </td>
+                                                <td class="percentagefigure">
+                                                    <h3></h3>
+                                                </td>
+                                            </tr>
+                                            <tr class="break-row">
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Country lists goes here -->
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
+
+
+
+
+
+
+                        <div class="container">
+                            <div class="row">&nbsp;</div>
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto ">
+                                    <h2 class="text mb-4">Stakeholders</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block-other">
+                            <div class="row">
+                                <div class="col-6">
+
+                                    <h3 class="text mb-4 byregion_header" style="color: #143058 !important;"></h3>
+                                    <div id="table-stakeholder-region"></div>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <h3 class="text mb-4 byorganisation_header" style="color:#143058 !important;"></h3>
+                                    <div id="table-stakeholder-org"></div>
+                                </div>
+                            </div>
+                            <div class="row">&nbsp;</div>
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto">
+                                    <h2 class="text mb-4 crosscuttiong_header" style="margin-bottom: 1.8rem!important;">
+                                    </h2>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mx-auto">
+                                    <div id="crosscutting_table"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
-                    <div class="block">
-                        <div class="row">
-                            <div class="block">
-                                <table id="table-transformation">
-                                    <thead>
-                                        <tr class="header-row">
-                                            <td class="country-name"></td>
-
-
-                                            <td class="percentagebar">
-                                                <span style="float:left;"
-                                                    data-localize="funded_text">Transformation</span>
-
-                                            </td>
-                                            <td class="percentagefigure">
-                                                <h3></h3>
-                                            </td>
-                                        </tr>
-                                        <tr class="break-row">
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Country lists goes here -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
 
 
 
 
 
 
-                    <div class="container">
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto ">
-                                <h2 class="text mb-4">Stakeholders</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block-other">
-                        <div class="row">
-                            <div class="col-6">
-
-                                <h3 class="text mb-4 byregion_header" style="color: #143058 !important;"></h3>
-                                <div id="table-stakeholder-region"></div>
-                            </div>
 
 
-                            <div class="col-6">
-                                <h3 class="text mb-4 byorganisation_header" style="color:#143058 !important;"></h3>
-                                <div id="table-stakeholder-org"></div>
-                            </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text mb-4 crosscuttiong_header" style="margin-bottom: 1.8rem!important;">
-                                </h2>
 
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 mx-auto">
-                                <div id="crosscutting_table"></div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+
+
 
 
 
 
                 </div>
+            </section>
+
+        </main>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
+    </div>
     </div>
     <div id="loader" class="pageload-overlay"
         data-opening="m -5,-5 0,70 90,0 0,-70 z m 5,35 c 0,0 15,20 40,0 25,-20 40,0 40,0 l 0,0 C 80,30 65,10 40,30 15,50 0,30 0,30 z">
@@ -1763,7 +1803,7 @@
                             type: 'donut',
                         },
                         color: {
-                            pattern: ['#2CA02C', '#E84E0F']
+                            pattern: ['#2CA02C', '#F7A600']
                         },
                         donut: {
                             label: {
@@ -1827,7 +1867,7 @@
                             type: 'donut',
                         },
                         color: {
-                            pattern: ['#2CA02C', '#E84E0F']
+                            pattern: ['#2CA02C', '#F7A600']
                         },
                         donut: {
                             label: {
@@ -1891,7 +1931,7 @@
                             type: 'donut',
                         },
                         color: {
-                            pattern: ['#2CA02C', '#E84E0F']
+                            pattern: ['#2CA02C', '#F7A600']
                         },
                         donut: {
                             label: {
@@ -2359,7 +2399,7 @@
 
 
                             color: {
-                              
+
                                 pattern: ["#00B1EB", "#51AF32", "#E84E0F"]
                             },
                             axis: {
@@ -2817,123 +2857,83 @@
                         },
                         tooltip: {
                             format: {
-                                title: function (d) { 
-                                if(d===0){
-                                    return '1A - Demonstrate timely, coherent and decisive political leadership';
-                                }
-                                else if(d===1){
-                                    return '1B - Act early';
-                                }
-                                else if(d===2){
-                                    return '1C - Remain engaged and invest in stability';
+                                title: function (d) {
+                                    if (d === 0) {
+                                        return '1A - Demonstrate timely, coherent and decisive political leadership';
+                                    } else if (d === 1) {
+                                        return '1B - Act early';
+                                    } else if (d === 2) {
+                                        return '1C - Remain engaged and invest in stability';
 
-                                }
-                                else if(d===3){
-                                    return '1D - Develop solutions with and for people';
+                                    } else if (d === 3) {
+                                        return '1D - Develop solutions with and for people';
 
-                                }
-
-                                else if(d===4){
+                                    } else if (d === 4) {
 
                                         return '2A - Respect and protect civilians and civilian objects in the conduct of hostilities';
-                                }
+                                    } else if (d === 5) {
+                                        return '2B - Ensure full access to and protection of the humanitarian and medical missions';
 
-                                else if(d===5){
-                                    return '2B - Ensure full access to and protection of the humanitarian and medical missions';
+                                    } else if (d === 6) {
+                                        return '2C - Speak out on violations';
 
-                                }
+                                    } else if (d === 7) {
+                                        return '2D - Take concrete steps to improve compliance and accountability';
 
-                                else if(d===6){
-                                    return '2C - Speak out on violations';
+                                    } else if (d === 8) {
+                                        return '2E - Uphold the rules: a global campaign to affirm the norms that safeguard humanity';
 
-                                }
-                                else if(d===7){
-                                    return '2D - Take concrete steps to improve compliance and accountability';
+                                    } else if (d === 9) {
+                                        return '3A - Reduce and address displacement';
 
-                                }
+                                    } else if (d === 10) {
+                                        return '3B - Address the vulnerabilities of migrants and provide more regular and lawful opportunities for migration';
 
-                                else if(d===8){
-                                    return '2E - Uphold the rules: a global campaign to affirm the norms that safeguard humanity';
+                                    } else if (d === 11) {
+                                        return '3C - End statelessness in the next decade';
 
-                                }
+                                    } else if (d === 12) {
+                                        return '3D - Empower and protect women and girls';
 
-                                else if(d===9){
-                                    return '3A - Reduce and address displacement';
+                                    } else if (d === 13) {
+                                        return '3E - Eliminate gaps in education for children, adolescents and young people';
 
-                                }
+                                    } else if (d === 14) {
+                                        return '3F - Enable adolescents and young people to be agents of positive transformation';
 
-                                else if(d===10){
-                                    return '3B - Address the vulnerabilities of migrants and provide more regular and lawful opportunities for migration';
+                                    } else if (d === 15) {
+                                        return '3G - Address other groups or minorities in crisis settings';
 
-                                }
+                                    } else if (d === 16) {
+                                        return '4A - Reinforce, do not replace, national and local systems';
 
-                                else if(d===11){
-                                    return '3C - End statelessness in the next decade';
+                                    } else if (d === 17) {
+                                        return '4B - Anticipate, do not wait, for crises';
 
-                                }
+                                    } else if (d === 18) {
+                                        return '4C - Deliver collective outcomes: transcend humanitarian-development divides';
 
-                                else if(d===12){
-                                    return '3D - Empower and protect women and girls';
+                                    } else if (d === 19) {
+                                        return '5A - Invest in local capacities';
 
-                                }
+                                    } else if (d === 20) {
+                                        return '5B - Invest according to risk';
 
-                                else if(d===13){
-                                    return '3E - Eliminate gaps in education for children, adolescents and young people';
+                                    } else if (d === 21) {
+                                        return '5C - Invest in stability';
 
-                                }
+                                    } else if (d === 22) {
+                                        return '5D - Finance outcomes, not fragmentation: shift from funding to financing';
 
-                                else if(d===14){
-                                    return '3F - Enable adolescents and young people to be agents of positive transformation';
-
-                                }
-                                else if(d===15){
-                                    return '3G - Address other groups or minorities in crisis settings';
-
-                                }
-
-                                else if(d===16){
-                                    return '4A - Reinforce, do not replace, national and local systems';
-
-                                }
-
-                                else if(d===17){
-                                    return '4B - Anticipate, do not wait, for crises';
-
-                                }
-
-                                else if(d===18){
-                                    return '4C - Deliver collective outcomes: transcend humanitarian-development divides';
-
-                                }
-
-                                else if(d===19){
-                                    return '5A - Invest in local capacities';
-
-                                }
-
-                                else if(d===20){
-                                    return '5B - Invest according to risk';
-
-                                }
-
-                                else if(d===21){
-                                    return '5C - Invest in stability';
-
-                                }
-                                else if(d===22){
-                                    return '5D - Finance outcomes, not fragmentation: shift from funding to financing';
-
-                                }
-
-                                else if(d===23){
-                                    return '5E - Diversify the resource base and increase cost-efficiency';
-                                }
+                                    } else if (d === 23) {
+                                        return '5E - Diversify the resource base and increase cost-efficiency';
+                                    }
 
 
 
-                               
-                                
-                            },
+
+
+                                },
 
                                 value: function (value, ratio, id) {
 
@@ -3237,7 +3237,7 @@
                             left: 60
                         },
 
-                        
+
                     },
                     color: {
                         pattern: ["#00B1EB", "#51AF32", "#E84E0F"]
@@ -3254,128 +3254,88 @@
                     },
                     tooltip: {
                         format: {
-                            title: function (d) { 
-                                if(d===0){
+                            title: function (d) {
+                                if (d === 0) {
                                     return '1A - Demonstrate timely, coherent and decisive political leadership';
-                                }
-                                else if(d===1){
+                                } else if (d === 1) {
                                     return '1B - Act early';
-                                }
-                                else if(d===2){
+                                } else if (d === 2) {
                                     return '1C - Remain engaged and invest in stability';
 
-                                }
-                                else if(d===3){
+                                } else if (d === 3) {
                                     return '1D - Develop solutions with and for people';
 
-                                }
+                                } else if (d === 4) {
 
-                                else if(d===4){
-
-                                        return '2A - Respect and protect civilians and civilian objects in the conduct of hostilities';
-                                }
-
-                                else if(d===5){
+                                    return '2A - Respect and protect civilians and civilian objects in the conduct of hostilities';
+                                } else if (d === 5) {
                                     return '2B - Ensure full access to and protection of the humanitarian and medical missions';
 
-                                }
-
-                                else if(d===6){
+                                } else if (d === 6) {
                                     return '2C - Speak out on violations';
 
-                                }
-                                else if(d===7){
+                                } else if (d === 7) {
                                     return '2D - Take concrete steps to improve compliance and accountability';
 
-                                }
-
-                                else if(d===8){
+                                } else if (d === 8) {
                                     return '2E - Uphold the rules: a global campaign to affirm the norms that safeguard humanity';
 
-                                }
-
-                                else if(d===9){
+                                } else if (d === 9) {
                                     return '3A - Reduce and address displacement';
 
-                                }
-
-                                else if(d===10){
+                                } else if (d === 10) {
                                     return '3B - Address the vulnerabilities of migrants and provide more regular and lawful opportunities for migration';
 
-                                }
-
-                                else if(d===11){
+                                } else if (d === 11) {
                                     return '3C - End statelessness in the next decade';
 
-                                }
-
-                                else if(d===12){
+                                } else if (d === 12) {
                                     return '3D - Empower and protect women and girls';
 
-                                }
-
-                                else if(d===13){
+                                } else if (d === 13) {
                                     return '3E - Eliminate gaps in education for children, adolescents and young people';
 
-                                }
-
-                                else if(d===14){
+                                } else if (d === 14) {
                                     return '3F - Enable adolescents and young people to be agents of positive transformation';
 
-                                }
-                                else if(d===15){
+                                } else if (d === 15) {
                                     return '3G - Address other groups or minorities in crisis settings';
 
-                                }
-
-                                else if(d===16){
+                                } else if (d === 16) {
                                     return '4A - Reinforce, do not replace, national and local systems';
 
-                                }
-
-                                else if(d===17){
+                                } else if (d === 17) {
                                     return '4B - Anticipate, do not wait, for crises';
 
-                                }
-
-                                else if(d===18){
+                                } else if (d === 18) {
                                     return '4C - Deliver collective outcomes: transcend humanitarian-development divides';
 
-                                }
-
-                                else if(d===19){
+                                } else if (d === 19) {
                                     return '5A - Invest in local capacities';
 
-                                }
-
-                                else if(d===20){
+                                } else if (d === 20) {
                                     return '5B - Invest according to risk';
 
-                                }
-
-                                else if(d===21){
+                                } else if (d === 21) {
                                     return '5C - Invest in stability';
 
-                                }
-                                else if(d===22){
+                                } else if (d === 22) {
                                     return '5D - Finance outcomes, not fragmentation: shift from funding to financing';
 
-                                }
-
-                                else if(d===23){
+                                } else if (d === 23) {
                                     return '5E - Diversify the resource base and increase cost-efficiency';
                                 }
 
 
 
-                               
-                                
+
+
                             },
-                         
+
                             //value: d3.format(',') // apply this format to both y and y2
                         }
                     }
-                                    });
+                });
 
 
 
@@ -3396,7 +3356,7 @@
                 ];
 
                 crises.forEach(function (element, index) {
-                    
+
 
 
 
@@ -3654,7 +3614,7 @@
                 if (stakeHolders.length > 1 && total.length) {
 
                     $("#chart-stakeholder").fadeIn(1000);
-                chart_org=    c3.generate({
+                    chart_org = c3.generate({
                         bindto: '#chart-stakeholder',
                         data: {
                             x: 'StakeHolders',
@@ -3720,7 +3680,7 @@
                 if (stakeHolders.length > 1 && total.length) {
 
                     $("#chart-stakeholder-region").fadeIn(1000);
-                 chart_region=  c3.generate({
+                    chart_region = c3.generate({
                         bindto: '#chart-stakeholder-region',
                         data: {
                             x: 'StakeHolders',
@@ -5863,19 +5823,206 @@
             chart_org.resize();
         });
         $("#tab1").click(function () {
-         
+
+            PopulateStokeHolder("2018");
+            PopulateStokeHolderRegion("2018");
+            PopulateTransformation("2018");
+            PopulateTransformationTable("2018");
+            PopulateTransformationMobileTable("2018");
+
+            PopulateStackholderTotal("2018");
+            PopulateHeader("2018");
+            PopulateCrossCuttingIssues("2018");
+            PopulateCrossCuttingIssueTable("2018");
+            PopulateChallenge("2018");
+            PopulateStokeHolderTable("2018");
+            PopulateStokeHolderRegionTable("2018");
+
+
+
             chart_region.resize();
             chart_org.resize();
         });
+
+        $("#tab3").click(function () {
+
+            PopulateStokeHolder("2017");
+            PopulateStokeHolderRegion("2017");
+            PopulateTransformation("2017");
+            PopulateTransformationTable("2017");
+            PopulateTransformationMobileTable("2017");
+
+            PopulateStackholderTotal("2017");
+            PopulateHeader("2017");
+            PopulateCrossCuttingIssues("2017");
+            PopulateCrossCuttingIssueTable("2017");
+            PopulateChallenge("2017");
+            PopulateStokeHolderTable("2017");
+            PopulateStokeHolderRegionTable("2017");
+
+
+
+            chart_reported_2016.resize();
+            chart_reported_2017.resize();
+            chart_reported_2018.resize();
+            stakholder.resize();
+            transforms.resize();
+            chal.resize();
+            chart_transformation_comps.resize();
+            chart_stakeholder_line.resize();
+            chart_region.resize();
+            chart_org.resize();
+        });
+
+        $("#tab4").click(function () {
+
+            PopulateStokeHolder("2016");
+            PopulateStokeHolderRegion("2016");
+            PopulateTransformation("2016");
+            PopulateTransformationTable("2016");
+            PopulateTransformationMobileTable("2016");
+
+            PopulateStackholderTotal("2016");
+            PopulateHeader("2016");
+            PopulateCrossCuttingIssues("2016");
+            PopulateCrossCuttingIssueTable("2016");
+            PopulateChallenge("2016");
+            PopulateStokeHolderTable("2016");
+            PopulateStokeHolderRegionTable("2016");
+
+
+
+            chart_reported_2016.resize();
+            chart_reported_2017.resize();
+            chart_reported_2018.resize();
+            stakholder.resize();
+            transforms.resize();
+            chal.resize();
+            chart_transformation_comps.resize();
+            chart_stakeholder_line.resize();
+            chart_region.resize();
+            chart_org.resize();
+        });
+
+
+        $("#tab7").click(function () {
+
+            PopulateStokeHolder("2016");
+            PopulateStokeHolderRegion("2016");
+            PopulateTransformation("2016");
+            PopulateTransformationTable("2016");
+            PopulateTransformationMobileTable("2016");
+
+            PopulateStackholderTotal("2016");
+            PopulateHeader("2016");
+            PopulateCrossCuttingIssues("2016");
+            PopulateCrossCuttingIssueTable("2016");
+            PopulateChallenge("2016");
+            PopulateStokeHolderTable("2016");
+            PopulateStokeHolderRegionTable("2016");
+
+
+
+            chart_reported_2016.resize();
+            chart_reported_2017.resize();
+            chart_reported_2018.resize();
+            stakholder.resize();
+            transforms.resize();
+            chal.resize();
+            chart_transformation_comps.resize();
+            chart_stakeholder_line.resize();
+            chart_region.resize();
+            chart_org.resize();
+        });
+
+        $("#tab6").click(function () {
+
+            PopulateStokeHolder("2017");
+            PopulateStokeHolderRegion("2017");
+            PopulateTransformation("2017");
+            PopulateTransformationTable("2017");
+            PopulateTransformationMobileTable("2017");
+
+            PopulateStackholderTotal("2017");
+            PopulateHeader("2017");
+            PopulateCrossCuttingIssues("2017");
+            PopulateCrossCuttingIssueTable("2017");
+            PopulateChallenge("2017");
+            PopulateStokeHolderTable("2017");
+            PopulateStokeHolderRegionTable("2017");
+
+
+
+            chart_reported_2016.resize();
+            chart_reported_2017.resize();
+            chart_reported_2018.resize();
+            stakholder.resize();
+            transforms.resize();
+            chal.resize();
+            chart_transformation_comps.resize();
+            chart_stakeholder_line.resize();
+            chart_region.resize();
+            chart_org.resize();
+        });
+
+        $("#tab5").click(function () {
+
+            PopulateStokeHolder("2018");
+            PopulateStokeHolderRegion("2018");
+            PopulateTransformation("2018");
+            PopulateTransformationTable("2018");
+            PopulateTransformationMobileTable("2018");
+
+            PopulateStackholderTotal("2018");
+            PopulateHeader("2018");
+            PopulateCrossCuttingIssues("2018");
+            PopulateCrossCuttingIssueTable("2018");
+            PopulateChallenge("2018");
+            PopulateStokeHolderTable("2018");
+            PopulateStokeHolderRegionTable("2018");
+
+
+
+            chart_reported_2016.resize();
+            chart_reported_2017.resize();
+            chart_reported_2018.resize();
+            stakholder.resize();
+            transforms.resize();
+            chal.resize();
+            chart_transformation_comps.resize();
+            chart_stakeholder_line.resize();
+            chart_region.resize();
+            chart_org.resize();
+        });
+        $("#tab8").click(function () {
+           // chart_reported_2016.resize();
+         //   chart_reported_2017.resize();
+       //     chart_reported_2018.resize();
+       //     stakholder.resize();
+      //      transforms.resize();
+     //       chal.resize();
+     //       chart_transformation_comps.resize();
+    //        chart_stakeholder_line.resize();
+       //     chart_region.resize();
+      //      chart_org.resize();
+        });
     </script>
-<script>
-function init() {
-    var sorter = tsorter.create('byregion');
-    var sorter1 = tsorter.create('byorg');
-}
-    
-window.onload = init;
-</script>
+    <script>
+        function init() {
+            var sorter = tsorter.create('byregion');
+            var sorter1 = tsorter.create('byorg');
+        }
+
+        window.onload = init;
+    </script>
+
+    <script>
+    $(document).ready(function (){
+        $("#tab1").prop("checked", true);
+        $("#tab8").prop("checked", true);
+
+    });
+    </script>
 </body>
 
 </html>
