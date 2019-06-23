@@ -839,11 +839,11 @@
                                             <div class="tab-pane fade show active" id="nav-home1" role="tabpanel"
                                                 aria-labelledby="nav-home-tab">
                                                 <h4 class="text mb-4 text-left"
-                                                    style="padding-top: 20px; padding-bottom: 20px;">Absolute numbers</h4>
+                                                    style="padding-top: 30px; padding-bottom: 20px;">Type of stakeholders who reported (absolute numbers)</h4>
                                                 <div id="chart-stakeholder-bar">
                                             </div>
                                             <h4 class="text mb-4 text-left"
-                                                style="padding-top: 20px; padding-bottom: 20px;">Percent of total reported</h4>
+                                                style="padding-top: 20px; padding-bottom: 20px;">Per cent of total reported</h4>
                                                 <div id="chart-stakeholder-line">
                                         </div>
 
@@ -855,7 +855,7 @@
                                         <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;">Absolute numbers</h4>
                                                 <div id="chart-transformation-bar">
                                     </div>
-                                    <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;">Percent of total reported</h4>
+                                    <h4 class="text mb-4 text-left" style="padding-top: 20px; padding-bottom: 20px;">Per cent of total reported</h4>
 
                                                 <div style="width: 90% !important;" id="chart_transformation_comp">
                                 </div>
@@ -1739,7 +1739,11 @@
                                     return d3.format('')(value);
                                 }
                             },
-                            title: (parseInt(year) + 1) + " Reported",
+                            title: 
+                                "358 total stakeholders 2017"
+                                
+                             
+                                
                         },
                         legend: {
                             show: false
@@ -1803,7 +1807,7 @@
                                     return d3.format('')(value);
                                 }
                             },
-                            title: (parseInt(year) + 1) + " Reported",
+                            title: "366 total stakeholders 2018",
                         },
                         legend: {
                             show: false
@@ -1867,7 +1871,7 @@
                                     return d3.format('')(value);
                                 }
                             },
-                            title: (parseInt(year) + 1) + " Reported",
+                            title: "366 total stakeholders 2019",
                         },
                         legend: {
                             show: false
@@ -4852,8 +4856,8 @@
             $('.stakeholder-header').html("Stakeholders <br>that reported <br>in " + (+year + y)).fadeIn(1000);
             $('.transformation_header').html((+year + 1) + " Reports by <br>Agenda for <br>Humanity Transformation")
                 .fadeIn(1000);
-            $('.crosscuttiong_header').html((+year + y) + " Cross cutting Issues").fadeIn(1000);
-            $('#challenges_header').html((+year + y) + " Challenges").fadeIn(1000);
+            $('.crosscuttiong_header').html("Cross cutting Issues").fadeIn(1000);
+            $('#challenges_header').html("Challenges").fadeIn(1000);
             $('.byregion_header').html("By Region of operation").fadeIn(1000);
             $('.byorganisation_header').html("By Type of Organisation").fadeIn(1000);
         }
