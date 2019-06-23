@@ -475,7 +475,7 @@
                     }
                 </script>
                 <script type="text/javascript"
-                    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             </header>
 
 
@@ -533,29 +533,7 @@
                                 </div>
                             </div>
                             <div class="row"> &nbsp;</div>
-                            <!--
-
-                            <div class="row"> &nbsp;</div>
-                            <div class="row"> &nbsp;</div>
-                            <div class="row">
-                                <div class="container text-center" style="margin-bottom:120px;">
-                                    <strong>YEAR: </strong>
-                                    <div class="dropdown">
-                                        <div class="select">
-                                            <span>Select Year</span>
-                                            <i class="fa fa-chevron-left"></i>
-                                        </div>
-                                        <input type="hidden" name="gender">
-                                        <ul class="dropdown-menu">
-                                            <li id="2016">2017</li>
-                                            <li id="2017">2018</li>
-                                            <li id="2018">2019</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        -->
+                            
                         </div>
                     </div>
 
@@ -719,70 +697,7 @@
 
 
 
-                                <!--
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-8 mx-auto " style="padding-top: 50px;">
-                                            <h2 class="text mb-4">Stakeholders</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container-fluid block-other" id="stakeholder">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12">
-    
-                                            <h3 class="text mb-4 byregion_header" style="margin-right: 50px; "></h3>
-                                            <div id="chart-stakeholder-region"></div>
-                                        </div>
-    
-    
-                                        <div class="col-md-6 col-sm-12">
-                                            <h3 class="text mb-4 byorganisation_header" style="margin-right: 50px;"></h3>
-                                            <div id="chart-stakeholder"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-8 col-sm-12 mx-auto">
-                                            <h2 class="text mb-4" id="challenges_header"></h2>
-    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="block-other">
-                                    <div class="row">
-                                        <div class="container-fluid mx-auto">
-                                            <div id="chart_challenges"></div>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-8 col-sm-12 mx-auto">
-                                            <h2 class="text mb-4 crosscuttiong_header"
-                                                style="margin-bottom: 1.8rem!important;">
-                                            </h2>
-    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="block-other">
-                                    <div class="row" id="ccichart">
-                                        <div class="col-lg-12 col-sm-12 mx-auto">
-                                            <div id="crosscutting"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row" id="ccitable">
-                                        <div class="col-lg-12 col-sm-12 mx-auto">
-                                            <div id="table-cci"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            -->
+                               
                             </div>
                         </div>
 
@@ -2393,7 +2308,7 @@
                             'International Organisation', 'Member State', 'NGO - International',
                             'NGO - National', 'Other', 'Private Sector', 'Regional Organisation', 'UN'
                         ];
-                        console.log(countsData);
+                      //  console.log(countsData);
                         $("#chart-stakeholder-line").fadeIn(1000);
                         chart_stakeholder_line = c3.generate({
                             bindto: '#chart-stakeholder-line',
@@ -2475,7 +2390,7 @@
                 var target = document.getElementById('chart_transformation_comp');
                 var spinner = new Spinner(opts).spin(target);
                 var tran = [];
-                console.log(total2018);
+               // console.log(total2018);
                 d3.json('https://www.agendaforhumanity.org/viz_endpoint/transformation/get.php', function (
                     crises) {
                     spinner.stop();
@@ -3751,7 +3666,7 @@
 
             var target = document.getElementById('chart-transformation');
             var spinner = new Spinner(opts).spin(target);
-            // d3.json('https://www.agendaforhumanity.org/viz_endpoint/transformation/get.php', function (error, data) {
+          
             d3.json('https://www.agendaforhumanity.org/viz_endpoint/transformation/get.php', function (error, data) {
                 spinner.stop();
                 if (error) {
@@ -4011,10 +3926,10 @@
 
 
         function ColorGenerator(number, color) {
-            console.log("color: " + color);
+          //  console.log("color: " + color);
             var colorList = [];
             var index = color.substr(4, 3);
-            console.log("index: " + index);
+          //  console.log("index: " + index);
             var unindexed = color.substr(7, 14);
             if (index === '81,' || index === '64,') {
                 var middle = color.substr(7, 3);
@@ -4033,7 +3948,7 @@
                 }
             }
 
-            console.log(colorList);
+            //console.log(colorList);
             return colorList;
         }
 
@@ -5629,7 +5544,7 @@
             } else if (document.getElementById('y3').checked) {
                 year = document.getElementById('y3').value;
             }
-            console.log(year);
+           // console.log(year);
             if (type == 'transformation' && download == 'pdf') {
                 $("#transformation_chart").css({
                     'border': '0px',
