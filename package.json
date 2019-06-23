@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0"
   }
 }
