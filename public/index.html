@@ -4566,14 +4566,14 @@
 
 
                     var row =
-                        "<table id='byregion' class='table table-hover sortable'><thead><tr class='header-row' style='cursor:pointer'><th>STAKEHOLDER</th><th>TOTAL</th></tr></thead>";
+                        "<table id='byregion' class='table table-hover sortable'><thead><tr class='header-row' style='cursor:pointer'><th>STAKEHOLDER</th><th>TOTAL</th></tr></thead><tbody>";
 
                     for (i = 1; i < stakeHolders.length; i++) {
                         row = row +
                             "<tr class='row-data'><td style='text-align:left;'>" +
                             stakeHolders[i] + "</td><td>" + total[i] + "</td></tr>";
                     }
-                    row = row + "</table>";
+                    row = row + "<tbody></table>";
                     document.getElementById("table-stakeholder-org").innerHTML = row;
 
                 } else {
@@ -4722,14 +4722,14 @@
 
 
                     var row =
-                        "<table id='byorg' class='table table-hover sortable'><thead><tr class='header-row'  style='cursor:pointer'><th>STAKEHOLDER</th><th>TOTAL</th></tr></thead>";
+                        "<table id='byorg' class='table table-hover sortable'><thead><tr class='header-row'  style='cursor:pointer'><th>STAKEHOLDER</th><th>TOTAL</th></tr></thead><tbody>";
 
                     for (i = 1; i < stakeHolders.length; i++) {
                         row = row +
                             "<tr class='row-data'><td style='text-align:left;'>" +
                             stakeHolders[i] + "</td><td>" + total[i] + "</td></tr>";
                     }
-                    row = row + "</table>";
+                    row = row + "<tbody></table>";
                     document.getElementById("table-stakeholder-region").innerHTML = row;
 
                 } else {
