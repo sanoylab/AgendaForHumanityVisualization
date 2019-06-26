@@ -2022,6 +2022,7 @@
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                         'Faith-based Organisation') {
                         countsData[2].push(element['Total']);
+                        countsData[2].push(0);
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                         'Foundation') {
@@ -2048,7 +2049,8 @@
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                         'Private Sector') {
-                        countsData[2].push(element['Total']);
+                        countsData[2].push(element['Total']); 
+                        countsData[2].push(0);
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                         'Regional Organisation') {
@@ -2268,6 +2270,7 @@
                                 'Faith-based Organisation') {
                                 let per = (element['Total'] * 100) / total2018;
                                 countsData[2].push(per.toFixed(1));
+                                countsData[2].push(0);
                             }
                             if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                                 'Foundation') {
@@ -2303,6 +2306,7 @@
                                 'Private Sector') {
                                 let per = (element['Total'] * 100) / total2018;
                                 countsData[2].push(per.toFixed(1));
+                                countsData[2].push(0);
                             }
                             if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                                 'Regional Organisation') {
