@@ -2045,6 +2045,7 @@
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                         'Foundation') {
+                            countsData[2].pop();
                         countsData[2].push(element['Total']);
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
@@ -2073,6 +2074,7 @@
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                         'Regional Organisation') {
+                            countsData[2].pop();
                         countsData[2].push(element['Total']);
                     }
                     if (element['ReportingYear'] == '2018' && element['Stakeholder'] == 'UN') {
@@ -2293,6 +2295,7 @@
                             }
                             if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                                 'Foundation') {
+                                    countsData[2].pop();
                                 let per = (element['Total'] * 100) / total2018;
                                 countsData[2].push(per.toFixed(1));
                             }
@@ -2329,6 +2332,7 @@
                             }
                             if (element['ReportingYear'] == '2018' && element['Stakeholder'] ==
                                 'Regional Organisation') {
+                                    countsData[2].pop();
                                 let per = (element['Total'] * 100) / total2018;
                                 countsData[2].push(per.toFixed(1));
                             }
