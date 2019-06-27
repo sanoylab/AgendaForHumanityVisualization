@@ -574,12 +574,15 @@ figure {
 }
 
 .introduction-section {
-  padding-top: 2rem;
+  padding-top: 1rem;
   background: #fff;
 
 }
 
+.mb-4, .my-4{
+  margin-bottom: 1rem !important;
 
+}
 
 
 .stakeholder-section .btn {
@@ -996,7 +999,7 @@ p.caption_no_border {
   font-family: 'Roboto Condensed',sans-serif;
     font-size: 14px;
     color: rgb(100,100,100);
-    padding-top: 10px;
+    
     margin-bottom: 0px;
 }
 

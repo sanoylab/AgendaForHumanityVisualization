@@ -181,14 +181,17 @@
         .tran1 {
             background-color: #00B1EB;
             fill: #00B1EB;
-            padding: 6px;
+            padding: 10px;
             color: #fff;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
         }
 
         .tran2 {
             background-color: #51AF32;
             fill: #51AF32;
-            padding: 6px;
+            padding: 10px;
             color: #fff;
             margin-left: -3px
         }
@@ -196,15 +199,15 @@
         .tran3 {
             background-color: #A863A5;
             fill: #A863A5;
-            padding: 6px;
+            padding: 10px;
             color: #fff;
-            margin-left: -3px
+            margin-left: -3px;
         }
 
         .tran4 {
             background-color: #F7A600;
             fill: #F7A600;
-            padding: 6px;
+            padding: 10px;
             color: #fff;
             margin-left: -3px
         }
@@ -212,9 +215,11 @@
         .tran5 {
             background-color: #E84E0F;
             fill: #E84E0F;
-            padding: 6px;
+            padding: 10px;
             color: #fff;
-            margin-left: -3px
+            margin-left: -3px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
         #chartfooter {
@@ -231,6 +236,7 @@
             padding: 50px;
             margin: 0 auto;
             background: #fff;
+            padding-top: 20px;
         }
 
         section {
@@ -532,7 +538,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-8 mx-auto ">
+                                <div class="col-lg-12 mx-auto ">
                                     <h1 class="text mb-4 main_header"></h1>
                                     <p class="text-50">The Interactive Summary provides an overview of <span
                                             class="year"></span> reporting by
@@ -1438,8 +1444,12 @@
                             </table>
 
                         </li>
-                        <li class="list-group-item"><a class="btn btn-primary" href="javascript:ExportPDF();"><i
-                                    class="far fa-file-pdf"></i> Download PDF</a></li>
+                        <li class="list-group-item">
+                            <a class="btn btn-primary" href="javascript:ExportFullReport();"><i class="far fa-file-pdf"></i> Download Full Report</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="btn btn-primary" href="javascript:ExportPDF();"><i class="far fa-file-pdf"></i> Download PDF</a>
+                        </li>
 
 
                     </ul>
@@ -1744,7 +1754,7 @@
                             type: 'donut',
                         },
                         color: {
-                            pattern: ['#2CA02C', '#F7A600']
+                            pattern: ['#00B1EB ', '#F7A600']
                         },
                         donut: {
                             label: {
@@ -1812,7 +1822,7 @@
                             type: 'donut',
                         },
                         color: {
-                            pattern: ['#2CA02C', '#F7A600']
+                            pattern: ['#51AF32 ', '#F7A600']
                         },
                         donut: {
                             label: {
@@ -1876,7 +1886,7 @@
                             type: 'donut',
                         },
                         color: {
-                            pattern: ['#2CA02C', '#F7A600']
+                            pattern: ['#E84E0F', '#F7A600']
                         },
                         donut: {
                             label: {
@@ -2783,7 +2793,7 @@
                         data: {
 
                             columns: countsData,
-                            labels: true,
+                            labels: false,
                             type: 'line',
                             padding: {
                                 left: 60
@@ -4065,6 +4075,7 @@
                     $('.subcategory_title').hide();
                     var element = document.getElementById("sub");
                     element.classList.remove("col-md-6");
+                    element.classList.add("col-md-2");
                     element.classList.remove("col-sm-12");
 
                 }
@@ -4809,7 +4820,8 @@
 
                     });
                 } else {
-                    $("#chart_challenges").fadeOut(1000);
+                   // $("#chart_challenges").fadeOut(1000);
+                    $("#chart_challenges").html('<div class="alert alert-success" role="alert">In '+(parseInt(year)+1)+' we did not collect comparable data on challenges. This data is only available as text in Reports search <a href="https://www.agendaforhumanity.org/explore-commitments/report-search?search_area=&challenges=All&reporting_year%5B'+year+'%5D=2017&specific_initiative=All&reporting_year_1%5B2017%5D=2017&cross_cutting_issue_1=All&form_build_id=form-8LLllwltPeurKSHbR1vtzT7LzRZEOgONPVvhnQAnk8I&form_id=es_site_search_form" target="_blank">click here</a></div>');
                 }
             });
         }
@@ -4871,7 +4883,7 @@
             $('.tab_header').html((+year + y) + " Visualization").fadeIn(1000);
             $('.year').html((+year + y)).fadeIn(1000);
             $('.stakeholder-header').html("Stakeholders <br>that reported <br>in " + (+year + y)).fadeIn(1000);
-            $('.transformation_header').html((+year + 1) + " Reports by <br>Agenda for <br>Humanity Transformation")
+            $('.transformation_header').html("Agenda for Humanity Reports <br>by Transformation")
                 .fadeIn(1000);
             $('.crosscuttiong_header').html("Cross cutting Issues").fadeIn(1000);
             $('#challenges_header').html("Challenges").fadeIn(1000);
@@ -5036,7 +5048,6 @@
 
                 })
 
-
             // Add the labels
             svg.append("g")
                 .selectAll("g")
@@ -5047,6 +5058,10 @@
                     return (x(d.Transformation_Short) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ?
                         "end" : "start";
                 })
+
+
+
+
                 .attr("transform", function (d) {
                     return "rotate(" + ((x(d.Transformation_Short) + x.bandwidth() / 2) * 180 / Math.PI - 90) +
                         ")" +
@@ -5056,22 +5071,24 @@
                 .text(function (d) {
                     return (d.Transformation_Short)
                 })
-
                 .attr("transform", function (d) {
                     return (x(d.Transformation_Short) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ?
                         "rotate(180)" : "rotate(0)";
                 })
                 .style("font-size", "11px")
                 .attr("alignment-baseline", "middle")
-            svg.append("g")
-                .selectAll("g")
-                .data(data)
-                .enter()
-                .append("g")
-                .attr("text-anchor", function (d) {
-                    return (x(d.Transformation_Short) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ?
-                        "end" : "start";
-                })
+                svg.append("g")
+                    .selectAll("g")
+                    .data(data)
+                    .enter()
+                    .append("g")
+                    .attr("text-anchor", function (d) {
+                        return (x(d.Transformation_Short) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ?
+                            "end" : "start";
+                    })
+               
+               
+               
                 .attr("transform", function (d) {
                     return "rotate(" + ((x(d.Transformation_Short) + x.bandwidth() / 2) * 180 / Math.PI - 90) +
                         ")" +
@@ -5082,6 +5099,10 @@
                 .text(function (d) {
                     return (d.Total)
                 })
+
+
+
+                
 
                 .attr("transform", function (d) {
                     return (x(d.Transformation_Short) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ?
@@ -5554,6 +5575,21 @@
                     280); //addImage(image, format, x-coordinate, y-coordinate, width, height)
                 pdf.save("Agenda for Humanity Visualization.pdf");
             });
+        }
+        function ExportFullReport() {
+           
+
+            var year = '2018';
+            if (document.getElementById('y1').checked) {
+                year = document.getElementById('y1').value;
+            } else if (document.getElementById('y2').checked) {
+                year = document.getElementById('y2').value;
+            } else if (document.getElementById('y3').checked) {
+                year = document.getElementById('y3').value;
+            }
+            console.log(year);
+            window.open('https://www.agendaforhumanity.org/explore-commitments/report-search?search_area=&cross_cutting_issue=All&reporting_year%5B'+(parseInt(year)+1)+'%5D='+(parseInt(year)+1)+'&specific_initiative=All&reporting_year_1%5B'+(parseInt(year)+1)+'%5D=2018&cross_cutting_issue_1=All&form_build_id=form-x-fL8jAwoFeXAWbLeDtS7MqXTKrrlVi3F1eaGC5xIH4&form_id=es_site_search_form', '_blank');
+
         }
 
         function ExportExcel(type, download) {

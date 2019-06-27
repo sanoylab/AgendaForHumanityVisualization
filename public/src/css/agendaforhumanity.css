@@ -584,7 +584,7 @@ input:checked~.no-script-box {
   display: none;
 }
 .header-container {
-  padding: 0 40px;
+  padding: 5px 40px;
 }
 .login-section,
 .login-section ul {
