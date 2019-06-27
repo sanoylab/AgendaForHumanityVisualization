@@ -1726,6 +1726,7 @@
             news = "https://www.agendaforhumanity.org/viz_endpoint/dashboard/get.php";
             var target = document.getElementById(dom);
             var spinner = new Spinner(opts).spin(target);
+           var total =358;
             d3.json(news, function (error, data) {
                 spinner.stop();
                 if (error) {
@@ -1758,12 +1759,12 @@
                         },
                         donut: {
                             label: {
-                                format: function (value, ratio, id) {
-                                    return d3.format('')(value);
+                                format: function (value, ratio, id) { 
+                                    return value;
                                 }
                             },
                             title: 
-                                "358 total stakeholders 2017"
+                                total+" total stakeholders"
                                 
                              
                                 
@@ -1772,9 +1773,13 @@
                             show: false
                         },
                         tooltip: {
+                            
                             format: {
                                 value: function (value, ratio, id) {
-                                    return (value);
+                                    var percentFormat = d3.format('.1%');
+                                    var per = (value*100)/total;
+                                    var h = (value)+' <br />('+percentFormat(ratio)+')'
+                                    return (value)+' ('+percentFormat(ratio)+')';
                                 }
                             }
                         }
@@ -1802,6 +1807,7 @@
                 }
                 var reported = ['Reported'],
                     notreported = ['Not reported'];
+                    var total =366;
                 data.forEach(function (element, index) {
                     if (element['ReportingYear'] == year) {
                         reported.push([Number(element['Reported'])]);
@@ -1830,15 +1836,19 @@
                                     return d3.format('')(value);
                                 }
                             },
-                            title: "366 total stakeholders 2018",
+                            title: "366 total stakeholders",
                         },
                         legend: {
                             show: false
                         },
                         tooltip: {
+                            
                             format: {
                                 value: function (value, ratio, id) {
-                                    return (value);
+                                    var percentFormat = d3.format('.1%');
+                                    var per = (value*100)/total;
+                                    var h = (value)+' <br />('+percentFormat(ratio)+')'
+                                    return (value)+' ('+percentFormat(ratio)+')';
                                 }
                             }
                         }
@@ -1866,6 +1876,7 @@
                 }
                 var reported = ['Reported'],
                     notreported = ['Not reported'];
+                    var total =366;
                 data.forEach(function (element, index) {
                     if (element['ReportingYear'] == year) {
                         reported.push([Number(element['Reported'])]);
@@ -1894,15 +1905,19 @@
                                     return d3.format('')(value);
                                 }
                             },
-                            title: "366 total stakeholders 2019",
+                            title: "366 total stakeholders",
                         },
                         legend: {
                             show: false
                         },
                         tooltip: {
+                            
                             format: {
                                 value: function (value, ratio, id) {
-                                    return (value);
+                                    var percentFormat = d3.format('.1%');
+                                    var per = (value*100)/total;
+                                    var h = (value)+' <br />('+percentFormat(ratio)+')'
+                                    return (value)+' ('+percentFormat(ratio)+')';
                                 }
                             }
                         }
@@ -4969,9 +4984,9 @@
                         .duration(200)
                         .style("opacity", .9);
                     div.html(d.Transformation_Long + " <br><h3 style='color: #fff;'>" + d.Total + "</h3>")
-                        .style("left", (d3.event.pageX - 410) + "px")
+                        .style("left", (d3.event.pageX - 510) + "px")
                         .style("display", "inline")
-                        .style("top", (d3.event.pageY - 700) + "px");
+                        .style("top", (d3.event.pageY - 600) + "px");
 
                     d3.select(this)
                         .style("opacity", "0.5");
