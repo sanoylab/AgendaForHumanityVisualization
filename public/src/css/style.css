@@ -395,6 +395,9 @@ figure {
     float: left;
 
   }
+  main{
+    padding: 0px !important;
+  }
 }
 
 @media (max-width:360px) {
@@ -404,7 +407,9 @@ figure {
     float: none;
     margin-right: 0;
   }
-
+main{
+  padding: 0px !important;
+}
   #first_parallex {
     background: url('../img/hero.jpg') center top / cover scroll no-repeat !important;
   }
@@ -419,7 +424,9 @@ figure {
     display: block;
     width: 100%;
   }
-
+  main{
+    padding: 0px !important;
+  }
   .table-info .textarea,
   .table-info .iconarea {
     width: 100%;
