@@ -410,6 +410,9 @@ figure {
 main{
   padding: 0px !important;
 }
+nav{
+  margin-bottom: 100px !important;
+}
   #first_parallex {
     background: url('../img/hero.jpg') center top / cover scroll no-repeat !important;
   }
@@ -427,6 +430,9 @@ main{
   main{
     padding: 0px !important;
   }
+  nav{
+    margin-bottom: 100px !important;
+}
   .table-info .textarea,
   .table-info .iconarea {
     width: 100%;
