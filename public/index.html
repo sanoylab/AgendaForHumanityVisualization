@@ -1783,12 +1783,15 @@
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
+
+                let total=0;
                 
                 d3.json('https://www.sanoylab.com/phpapi/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
                         if (element['ReportingYear'] == year) {
                             reported.push([Number(element['Reported'])]);
+                            total = total + Number(element['Reported']);
                         }
                     });
 
@@ -1799,15 +1802,18 @@
                             crises.forEach(function (element, index) {
                                 if (element['ReportingYear'] == year) {
                                     notreported.push([Number(element['NotReported'])]);
+                                    total = total + Number(element['NotReported']);
                                 }
 
                             });
                             //chart     
 
 
-                            console.log("yonas");
-                            console.log(notreported);  
-                            console.log(reported);    
+                               
+
+                            
+
+                            
 
                             if (reported.length > 1) {
 
@@ -1829,7 +1835,7 @@
                                     return value;
                                 }
                             },
-                            title:  year+" stakeholders reported"
+                            title:  total+" stakeholders in "+year
 
 
 
@@ -1872,12 +1878,14 @@
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
+                let total =0;
                 
                 d3.json('https://www.sanoylab.com/phpapi/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
                         if (element['ReportingYear'] == year) {
                             reported.push([Number(element['Reported'])]);
+                            total = total + Number(element['Reported']);
                         }
                     });
 
@@ -1888,6 +1896,7 @@
                             crises.forEach(function (element, index) {
                                 if (element['ReportingYear'] == year) {
                                     notreported.push([Number(element['NotReported'])]);
+                                    total = total + Number(element['NotReported']);
                                 }
 
                             });
@@ -1916,7 +1925,7 @@
                                     return value;
                                 }
                             },
-                            title:  year+" stakeholders reported"
+                            title:  total+" stakeholders in "+year
 
 
 
@@ -1965,12 +1974,14 @@
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
+                let total=0;
                 
                 d3.json('https://www.sanoylab.com/phpapi/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
                         if (element['ReportingYear'] == year) {
                             reported.push([Number(element['Reported'])]);
+                            total = total + Number(element['Reported']);
                         }
                     });
 
@@ -1981,15 +1992,14 @@
                             crises.forEach(function (element, index) {
                                 if (element['ReportingYear'] == year) {
                                     notreported.push([Number(element['NotReported'])]);
+                                    total = total + Number(element['NotReported']);
                                 }
 
                             });
                             //chart     
 
 
-                            console.log("yonas");
-                            console.log(notreported);  
-                            console.log(reported);    
+                              
 
                             if (reported.length > 1) {
 
@@ -2011,7 +2021,7 @@
                                     return value;
                                 }
                             },
-                            title:  year+" stakeholders reported"
+                            title:  total+" stakeholders in "+year
 
 
 
