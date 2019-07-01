@@ -174,17 +174,28 @@
             background-color: #fff;
             background-clip: padding-box;
             border: 1px solid rgba(0, 0, 0, .2);
-            border-radius: .3rem;
+          
             outline: 0;
         }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+           
+            
+            }
 
+            .flex-container > div {
+
+            width: 150px;
+           
+            
+            }
         .tran1 {
             background-color: #00B1EB;
             fill: #00B1EB;
             padding: 10px;
             color: #fff;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
+            
 
         }
 
@@ -218,8 +229,7 @@
             padding: 10px;
             color: #fff;
             margin-left: -3px;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
+           
         }
 
         #chartfooter {
@@ -587,15 +597,21 @@
                                         <div id="total-stackholder"></div>
                                         <p class="caption_no_border" id="asof" data-localize="overview_sources"></p>
                                     </div>
-                                    <div class="col-9" id="transformation_chart">
-                                        <div id="chart-transformation"></div>
-                                        <div id="chartfooter">
-                                            <span class="tran1">PREVENT AND END CONFLICT</span>
-                                            <span class="tran2">RESPECT RULES OF WAR</span>
-                                            <span class="tran3">LEAVE NO ONE BEHIND</span>
-                                            <span class="tran4">WORK DIFFERENTLY TO END NEED</span>
-                                            <span class="tran5">INVEST IN HUMANITY</span>
+                                    <div class="col-md-9" id="transformation_chart">
+                                        <div class="row">
+                                                <div id="chart-transformation"></div>
                                         </div>
+                                        <div class="row">
+                                                <div id="chartfooter" class="flex-container">
+                                                        <div class="tran1">PREVENT AND END CONFLICT</div>
+                                                        <div class="tran2">RESPECT RULES OF WAR</div>
+                                                        <div class="tran3">LEAVE NO ONE BEHIND</div>
+                                                        <div class="tran4">WORK DIFFERENTLY TO END NEED</div>
+                                                        <div class="tran5">INVEST IN HUMANITY</div>
+                                                    </div>
+                                            </div>
+                                       
+                                        
                                     </div>
                                 </div>
                                 <div class="row">
@@ -771,23 +787,23 @@
 
                                         <!-- /.info-box-content -->
 
-                                        <div class="info-box bg-green" style="border-top-right-radius: 20px;">
-                                            <span class="info-box-icon"><i class="fas fa-chart-pie"></i></span>
+                                        
 
-                                            <div class="info-box-content">
-                                                <span class="info-box-text">2019 Total Reported</span>
-                                                <span class="info-box-number"><span
-                                                        id="total-stakeholder-2018"></span></span>
-
-                                                <div class="progress">
-                                                    <div class="progress-bar" style="width: 20%"></div>
+                                         <!-- /.info-box -->
+                                         <div class="info-box bg-red"  style="border-top-right-radius: 20px;">
+                                                <span class="info-box-icon"><i class="fas fa-chart-pie"></i></span>
+    
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text">2017 Total Reported</span>
+                                                    <span class="info-box-number"><span
+                                                            id="total-stackholder-2016"></span></span>
+    
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 40%"></div>
+                                                    </div>
+    
                                                 </div>
-
                                             </div>
-                                            <!-- /.info-box-content -->
-
-
-                                        </div>
                                         <!-- Info Boxes Style 2 -->
                                         <div class="info-box bg-yellow">
                                             <span class="info-box-icon"><i class="fas fa-chart-pie"></i></span>
@@ -798,27 +814,29 @@
                                                         id="total-stakeholder-2017"></span></span>
 
                                                 <div class="progress">
-                                                    <div class="progress-bar" style="width: 50%"></div>
+                                                    <div class="progress-bar" style="width: 42%"></div>
                                                 </div>
 
                                             </div>
                                             <!-- /.info-box-content -->
                                         </div>
-                                        <!-- /.info-box -->
-                                        <div class="info-box bg-red"  style="border-bottom-right-radius: 20px;">
-                                            <span class="info-box-icon"><i class="fas fa-chart-pie"></i></span>
-
-                                            <div class="info-box-content">
-                                                <span class="info-box-text">2017 Total Reported</span>
-                                                <span class="info-box-number"><span
-                                                        id="total-stackholder-2016"></span></span>
-
-                                                <div class="progress">
-                                                    <div class="progress-bar" style="width: 40%"></div>
+                                        <div class="info-box bg-green" style="border-bottom-right-radius: 20px;">
+                                                <span class="info-box-icon"><i class="fas fa-chart-pie"></i></span>
+    
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text">2019 Total Reported</span>
+                                                    <span class="info-box-number"><span
+                                                            id="total-stakeholder-2018"></span></span>
+    
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 32%"></div>
+                                                    </div>
+    
                                                 </div>
-
+                                                <!-- /.info-box-content -->
+    
+    
                                             </div>
-                                        </div>
 
 
                                     </div>
@@ -1868,10 +1886,10 @@
                     var label = d3.select('#charts_reported_2016 text.c3-chart-arcs-title');
  
                     label.html(''); // remove existant text
-                    label.insert('tspan').text(total).attr('dy', -30).attr('x', 0).attr('class','big-font');
+                    label.insert('tspan').text(total).attr('dy', -20).attr('x', 0).attr('class','big-font');
                     label.insert('tspan').text('Total').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
                     label.insert('tspan').text('stakeholders').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
-                    label.insert('tspan').text('2017').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                    label.insert('tspan').text('2017').attr('dy', 25).attr('x', 0).attr('class', 'small-fontlast');
 
                    
                 } else {
@@ -1967,10 +1985,10 @@
                     var label = d3.select('#charts_reported_2017 text.c3-chart-arcs-title');
  
                         label.html(''); // remove existant text
-                        label.insert('tspan').text(total).attr('dy', -30).attr('x', 0).attr('class','big-font');
+                        label.insert('tspan').text(total).attr('dy', -20).attr('x', 0).attr('class','big-font');
                         label.insert('tspan').text('Total').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
                         label.insert('tspan').text('stakeholders').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
-                        label.insert('tspan').text('2018').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                        label.insert('tspan').text('2018').attr('dy', 25).attr('x', 0).attr('class', 'small-fontlast');
 
                 } else {
                     $("#" + dom).fadeOut(1000);
@@ -2071,10 +2089,10 @@
                     var label = d3.select('#charts_reported_2018 text.c3-chart-arcs-title');
  
                     label.html(''); // remove existant text
-                    label.insert('tspan').text(total).attr('dy', -30).attr('x', 0).attr('class','big-font');
+                    label.insert('tspan').text(total).attr('dy', -20).attr('x', 0).attr('class','big-font');
                     label.insert('tspan').text('Total').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
                     label.insert('tspan').text('stakeholders').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
-                    label.insert('tspan').text('2019').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                    label.insert('tspan').text('2019').attr('dy', 25).attr('x', 0).attr('class', 'small-fontlast');
 
                 } else {
                     $("#" + dom).fadeOut(1000);
