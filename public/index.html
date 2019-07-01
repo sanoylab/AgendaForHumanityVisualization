@@ -582,7 +582,7 @@
                             <div class="block">
                                 <div class="row">
                                     <div class="col-md-3 col-sm-12 mx-auto"
-                                        style="padding-top: 350px; margin-bottom: 50px;">
+                                        style="padding-top: 40px; margin-bottom: 50px;">
                                         <h3 class="text mb-4 stakeholder-header"></h3>
                                         <div id="total-stackholder"></div>
                                         <p class="caption_no_border" id="asof" data-localize="overview_sources"></p>
@@ -1823,6 +1823,8 @@
                             if (reported.length > 1) {
 
                     $("#" + dom).fadeIn(1000);
+              
+                    
 
                     chart_reported_2016 = c3.generate({
                         bindto: '#' + dom,
@@ -1840,8 +1842,8 @@
                                     return value;
                                 }
                             },
+                          
                             title:  total+" stakeholders in "+(parseInt(year+1))
-
 
 
                         },
@@ -1863,6 +1865,15 @@
 
 
                     });
+                    var label = d3.select('#charts_reported_2016 text.c3-chart-arcs-title');
+ 
+                    label.html(''); // remove existant text
+                    label.insert('tspan').text(total).attr('dy', -30).attr('x', 0).attr('class','big-font');
+                    label.insert('tspan').text('Total').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                    label.insert('tspan').text('stakeholders').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                    label.insert('tspan').text('2017').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+
+                   
                 } else {
                     $("#" + dom).fadeOut(1000);
                 }
@@ -1953,6 +1964,14 @@
 
 
                     });
+                    var label = d3.select('#charts_reported_2017 text.c3-chart-arcs-title');
+ 
+                        label.html(''); // remove existant text
+                        label.insert('tspan').text(total).attr('dy', -30).attr('x', 0).attr('class','big-font');
+                        label.insert('tspan').text('Total').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                        label.insert('tspan').text('stakeholders').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                        label.insert('tspan').text('2018').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+
                 } else {
                     $("#" + dom).fadeOut(1000);
                 }
@@ -2049,6 +2068,14 @@
 
 
                     });
+                    var label = d3.select('#charts_reported_2018 text.c3-chart-arcs-title');
+ 
+                    label.html(''); // remove existant text
+                    label.insert('tspan').text(total).attr('dy', -30).attr('x', 0).attr('class','big-font');
+                    label.insert('tspan').text('Total').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                    label.insert('tspan').text('stakeholders').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+                    label.insert('tspan').text('2019').attr('dy', 25).attr('x', 0).attr('class', 'small-font');
+
                 } else {
                     $("#" + dom).fadeOut(1000);
                 }
@@ -3886,7 +3913,7 @@
             });
         }
 
-        function PopulateSearch(core, transformation, reportingYear, color) {
+        function PopulateSearch(core, transform,transformation, reportingYear, color) {
 
 
 
@@ -3909,12 +3936,12 @@
             } else {
                 var searchUrl =
                     'https://www.agendaforhumanity.org/explore-commitments/report-search?reporting_year[' +
-                    reportingYear + ']=' + reportingYear + '&transformation_cr1[' + transformation + ']=' +
+                    (parseInt(reportingYear)+1) + ']=' + (parseInt(reportingYear)+1) + '&core_responsibility['+transform+']='+core+'&transformation_cr'+core+'[' + transformation + ']=' +
                     transformation;
 
                 var downloadUrl =
-                    'https://www.agendaforhumanity.org/download-annual-report?reporting_year[' + reportingYear + ']=' +
-                    reportingYear + '&transformation_cr1[' + transformation + ']=' + transformation;
+                    'https://www.agendaforhumanity.org/download-annual-report?reporting_year[' + (parseInt(reportingYear)+1) + ']=' +
+                    (parseInt(reportingYear)+1) + '&core_responsibility['+transform+']='+core+'&transformation_cr'+core+'[' + transformation + ']=' + transformation;
 
 
 
@@ -4178,19 +4205,19 @@
                                 subcat = d.name;
                                 $('#selectedd').html(subcat);
                                 if (transformation.substr(0, 1) == "1") {
-                                    PopulateSearch('1', getTransformationCode(transformation), year,
+                                    PopulateSearch('1',transformation, getTransformationCode(transformation), year,
                                         "#00B1EB");
                                 } else if (transformation.substr(0, 1) == "2") {
-                                    PopulateSearch('2', getTransformationCode(transformation), year,
+                                    PopulateSearch('2',transformation, getTransformationCode(transformation), year,
                                         "#51AF32");
                                 } else if (transformation.substr(0, 1) == "3") {
-                                    PopulateSearch('3', getTransformationCode(transformation), year,
+                                    PopulateSearch('3',transformation, getTransformationCode(transformation), year,
                                         "#A863A5");
                                 } else if (transformation.substr(0, 1) == "4") {
-                                    PopulateSearch('4', getTransformationCode(transformation), year,
+                                    PopulateSearch('4',transformation, getTransformationCode(transformation), year,
                                         "#F7A600");
                                 } else if (transformation.substr(0, 1) == "5") {
-                                    PopulateSearch('5', getTransformationCode(transformation), year,
+                                    PopulateSearch('5',transformation, getTransformationCode(transformation), year,
                                         "#E84E0F");
                                 }
 
@@ -4557,7 +4584,7 @@
                 PopulateCrossCuttingIssuesDetail(transformation, reportingYear, "#40C5F0");
                 PopulateCrossCuttingIssuesTableDetail(transformation, reportingYear, "#40C5F0");
                 PopulateSelectedSubCategory(transformation, reportingYear, "rgb(64,197,240)");
-                PopulateSearch('1', getTransformationCode(transformation), reportingYear, "#40C5F0");
+                PopulateSearch('1',transformation, getTransformationCode(transformation), reportingYear, "#40C5F0");
 
             } else if (transformation.charAt(0) == "2") {
                 $(".popup_title").css("color", "#51AF32");
@@ -4573,7 +4600,7 @@
                 PopulateCrossCuttingIssuesTableDetail(transformation, reportingYear, "#51AF32");
                 PopulateCrossCuttingIssuesDetail(transformation, reportingYear, "#51AF32");
                 PopulateSelectedSubCategory(transformation, reportingYear, "rgb(81,175,50)");
-                PopulateSearch('2', getTransformationCode(transformation), reportingYear, "#51AF32");
+                PopulateSearch('2', transformation,getTransformationCode(transformation), reportingYear, "#51AF32");
 
             } else if (transformation.charAt(0) == "3") {
                 $(".popup_title").css("color", "#A863A5");
@@ -4590,7 +4617,7 @@
                 PopulateCrossCuttingIssuesDetail(transformation, reportingYear, "#A863A5");
                 PopulateCrossCuttingIssuesTableDetail(transformation, reportingYear, "#A863A5");
                 PopulateSelectedSubCategory(transformation, reportingYear, "rgb(168,99,165)");
-                PopulateSearch('3', getTransformationCode(transformation), reportingYear, "#A863A5");
+                PopulateSearch('3', transformation,getTransformationCode(transformation), reportingYear, "#A863A5");
 
             } else if (transformation.charAt(0) == "4") {
                 $(".popup_title").css("color", "#F7A600");
@@ -4606,7 +4633,7 @@
                 PopulateCrossCuttingIssuesDetail(transformation, reportingYear, "#F7A600");
                 PopulateCrossCuttingIssuesTableDetail(transformation, reportingYear, "#F7A600");
                 PopulateSelectedSubCategory(transformation, reportingYear, "rgb(247,166,0)");
-                PopulateSearch('4', getTransformationCode(transformation), reportingYear, "#F7A600");
+                PopulateSearch('4', transformation,getTransformationCode(transformation), reportingYear, "#F7A600");
 
             } else if (transformation.charAt(0) == "5") {
                 $(".popup_title").css("color", "#E84E0F");
@@ -4623,7 +4650,7 @@
                 PopulateCrossCuttingIssuesDetail(transformation, reportingYear, "#E84E0F");
                 PopulateCrossCuttingIssuesTableDetail(transformation, reportingYear, "#E84E0F");
                 PopulateSelectedSubCategory(transformation, reportingYear, "rgb(232,78,15)");
-                PopulateSearch('5', getTransformationCode(transformation), reportingYear, "#E84E0F");
+                PopulateSearch('5',transformation, getTransformationCode(transformation), reportingYear, "#E84E0F");
 
             }
 
@@ -4976,9 +5003,9 @@
                     // $("#chart_challenges").fadeOut(1000);
                     $("#chart_challenges").html('<div class="alert alert-success" role="alert">In ' + (parseInt(
                             year) + 1) +
-                        ' we did not collect comparable data on challenges. This data is only available as text in Reports search <a href="https://www.agendaforhumanity.org/explore-commitments/report-search?search_area=&challenges=All&reporting_year%5B' +
+                        ' we did not collect comparable data on challenges. This data is only available as text in reports search. <a href="https://www.agendaforhumanity.org/explore-commitments/report-search?search_area=&challenges=All&reporting_year%5B' +
                         year +
-                        '%5D=2017&specific_initiative=All&reporting_year_1%5B2017%5D=2017&cross_cutting_issue_1=All&form_build_id=form-8LLllwltPeurKSHbR1vtzT7LzRZEOgONPVvhnQAnk8I&form_id=es_site_search_form" target="_blank">click here</a></div>'
+                        '%5D=2017&specific_initiative=All&reporting_year_1%5B2017%5D=2017&cross_cutting_issue_1=All&form_build_id=form-8LLllwltPeurKSHbR1vtzT7LzRZEOgONPVvhnQAnk8I&form_id=es_site_search_form" target="_blank">Click here</a> to explore.</div>'
                     );
                 }
             });
@@ -5040,8 +5067,8 @@
             $('.main_header').html((+year + y) + " Interactive Summary").fadeIn(1000);
             $('.tab_header').html((+year + y) + " Visualization").fadeIn(1000);
             $('.year').html((+year + y)).fadeIn(1000);
-            $('.stakeholder-header').html("Stakeholders <br>that reported <br>in " + (+year + y)).fadeIn(1000);
-            $('.transformation_header').html("Agenda for Humanity Reports <br>by Transformation")
+            $('.stakeholder-header').html("Stakeholders that reported ").fadeIn(1000);
+            $('.transformation_header').html("Reports by Transformation")
                 .fadeIn(1000);
             $('.crosscuttiong_header').html("Cross cutting Issues").fadeIn(1000);
             $('#challenges_header').html("Challenges").fadeIn(1000);
@@ -5678,7 +5705,8 @@
 
                 //2nd loop will extract each column and convert it in string comma-seprated
                 for (var index in arrData[i]) {
-                    row += '"' + arrData[i][index] + '",';
+                  
+                    row += '"' + arrData[i][index].toString().replace(/,/g , " ").replace(/\s+$/, '') + '",';
                 }
 
                 row.slice(0, row.length - 1);
@@ -5746,13 +5774,13 @@
             } else if (document.getElementById('y3').checked) {
                 year = document.getElementById('y3').value;
             }
-            console.log(year);
-            window.open(
-                'https://www.agendaforhumanity.org/explore-commitments/report-search?search_area=&cross_cutting_issue=All&reporting_year%5B' +
-                (parseInt(year) + 1) + '%5D=' + (parseInt(year) + 1) +
-                '&specific_initiative=All&reporting_year_1%5B' + (parseInt(year) + 1) +
-                '%5D=2018&cross_cutting_issue_1=All&form_build_id=form-x-fL8jAwoFeXAWbLeDtS7MqXTKrrlVi3F1eaGC5xIH4&form_id=es_site_search_form',
-                '_blank');
+           window.open('https://www.agendaforhumanity.org/public/ReportDownload','_blank');
+           // window.open(
+         //       'https://www.agendaforhumanity.org/explore-commitments/report-search?search_area=&cross_cutting_issue=All&reporting_year%5B' +
+   //        (parseInt(year) + 1) + '%5D=' + (parseInt(year) + 1) +
+       //         '&specific_initiative=All&reporting_year_1%5B' + (parseInt(year) + 1) +
+       //         '%5D=2018&cross_cutting_issue_1=All&form_build_id=form-x-fL8jAwoFeXAWbLeDtS7MqXTKrrlVi3F1eaGC5xIH4&form_id=es_site_search_form',
+        //        '_blank');
 
         }
 
@@ -5846,7 +5874,7 @@
                         if (element['ReportingYear'] == year) {
                             transformation_short.push(element['Transformation_Short']);
                             total.push(Number(element['Total']));
-                            transformation_long.push(element['Transformation_Long'].trim());
+                            transformation_long.push(element['Transformation_Long'].replace(',', ''));
                             reportingYear.push(parseInt(element['ReportingYear']) + 1);
                         }
 

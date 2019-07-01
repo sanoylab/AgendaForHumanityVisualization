@@ -1374,6 +1374,17 @@ h3 {
 .info-box .progress .progress-bar {
   background: #fff;
 }
+
+.big-font{
+  font-size: 34px;
+    font-weight: bold;
+    color: #286BCE !important;
+    font-family: 'Roboto', sans-serif;
+}
+.small-font{
+  font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+}
 .info-box-icon {
   border-top-left-radius: 2px;
   border-top-right-radius: 0;
