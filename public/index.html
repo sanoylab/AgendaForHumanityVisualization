@@ -1783,7 +1783,7 @@
         var chart_stakeholder_line;
 
         function PopulateReportStatusDashboard2016(year, dom) {
-            reportedapi = "https://www.sanoylab.com/phpapi/dashboard/reported.php";
+            reportedapi = "https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php";
             var target = document.getElementById(dom);
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
@@ -1791,7 +1791,7 @@
 
                 let total=0;
                 
-                d3.json('https://www.sanoylab.com/phpapi/dashboard/reported.php', function (crises) {
+                d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
                         if (element['ReportingYear'] == year) {
@@ -1802,7 +1802,7 @@
 
                     var target = document.getElementById('chart-stakeholder-line');
                     var spinner = new Spinner(opts).spin(target);
-                    d3.json('https://www.sanoylab.com/phpapi/dashboard/notreported.php', function (crises) {
+                    d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/notreported.php', function (crises) {
 
                             crises.forEach(function (element, index) {
                                 if (element['ReportingYear'] == year) {
@@ -1878,14 +1878,14 @@
 
 
         function PopulateReportStatusDashboard2017(year, dom) {
-            reportedapi = "https://www.sanoylab.com/phpapi/dashboard/reported.php";
+            reportedapi = "https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php";
             var target = document.getElementById(dom);
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
                 let total =0;
                 
-                d3.json('https://www.sanoylab.com/phpapi/dashboard/reported.php', function (crises) {
+                d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
                         if (element['ReportingYear'] == year) {
@@ -1896,7 +1896,7 @@
 
                     var target = document.getElementById('chart-stakeholder-line');
                     var spinner = new Spinner(opts).spin(target);
-                    d3.json('https://www.sanoylab.com/phpapi/dashboard/notreported.php', function (crises) {
+                    d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/notreported.php', function (crises) {
 
                             crises.forEach(function (element, index) {
                                 if (element['ReportingYear'] == year) {
@@ -1974,14 +1974,14 @@
         }
 
         function PopulateReportStatusDashboard2018(year, dom) {
-            reportedapi = "https://www.sanoylab.com/phpapi/dashboard/reported.php";
+            reportedapi = "https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php";
             var target = document.getElementById(dom);
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
                 let total=0;
                 
-                d3.json('https://www.sanoylab.com/phpapi/dashboard/reported.php', function (crises) {
+                d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
                         if (element['ReportingYear'] == year) {
@@ -1992,7 +1992,7 @@
 
                     var target = document.getElementById('chart-stakeholder-line');
                     var spinner = new Spinner(opts).spin(target);
-                    d3.json('https://www.sanoylab.com/phpapi/dashboard/notreported.php', function (crises) {
+                    d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/notreported.php', function (crises) {
 
                             crises.forEach(function (element, index) {
                                 if (element['ReportingYear'] == year) {
