@@ -419,7 +419,9 @@ th[role=columnheader]:not(.no-sort):hover:after {
 	opacity: 1;
 }
 
-
+.c3-legend-item-2018{
+    margin-top: 100px;
+}
     </style>
     <link rel="stylesheet" type="text/css" href="src/css/component.css" />
     <script src="src/js/snap.svg-min.js"></script>
@@ -941,7 +943,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                                                         <div class="col-lg-12 col-sm-12 mx-auto">
                                                             <h4 class="text mb-4 text-left"
                                                                 style="padding-top: 20px; padding-bottom: 20px;">
-                                                                Absolute numbers
+                                                                Reports received (Absolute numbers)
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -982,7 +984,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                                                         <div class="col-lg-12 col-sm-12 mx-auto">
                                                             <h4 class="text mb-4 text-left"
                                                                 style="padding-top: 20px; padding-bottom: 20px;">
-                                                                Absolute numbers
+                                                                Challenges reported by Stakeholders (Absolute numbers)
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -2327,12 +2329,12 @@ th[role=columnheader]:not(.no-sort):hover:after {
                         labels: true,
                     },
                     legend: {
-                        show: true
+                       show: true
                     },
                     types: {
                         data: 'bar'
                     },
-
+                   
 
                     color: {
                         pattern: ["#00B1EB", "#51AF32", "#E84E0F"]
@@ -2349,9 +2351,14 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     },
                     padding: {
                         left: 100,
-                        right: 10
+                        right: 10, 
+                        bottom: 40
                     }
                 });
+
+               
+                d3.select(".c3-legend-item .c3-legend-item-2017 .c3-legend-item-2018 .c3-legend-item-2019"). style("float", "right").attr("transform", "translate(0,7)");
+
 
 
             });
@@ -2611,7 +2618,8 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             },
                             padding: {
                                 left: 100,
-                                right: 10
+                                right: 10,
+                                bottom: 40
                             },
                             tooltip: {
                                 format: {
@@ -2624,6 +2632,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                                 }
                             }
                         });
+                        d3.select(".c3-legend-item .c3-legend-item-2017 .c3-legend-item-2018 .c3-legend-item-2019"). style("float", "right").attr("transform", "translate(0,7)");
 
 
                     });
@@ -3052,6 +3061,9 @@ th[role=columnheader]:not(.no-sort):hover:after {
                                 show: false
                             }
                         },
+                        padding:{
+                            bottom: 40
+                        },
                         tooltip: {
                             format: {
                                 title: function (d) {
@@ -3141,6 +3153,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                         }
                     });
 
+                    d3.select(".c3-legend-item .c3-legend-item-2017 .c3-legend-item-2018 .c3-legend-item-2019"). style("float", "right").attr("transform", "translate(0,7)");
 
 
                 });
@@ -3431,7 +3444,8 @@ th[role=columnheader]:not(.no-sort):hover:after {
                         labels: true,
                         type: 'bar',
                         padding: {
-                            left: 60
+                            left: 60,
+                            bottom: 40
                         },
 
 
@@ -3449,6 +3463,10 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             show: false
                         }
                     },
+                    padding: {
+                               
+                                bottom: 40
+                            },
                     tooltip: {
                         format: {
                             title: function (d) {
@@ -3533,6 +3551,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                         }
                     }
                 });
+                d3.select(".c3-legend-item .c3-legend-item-2017 .c3-legend-item-2018 .c3-legend-item-2019"). style("float", "right").attr("transform", "translate(0,7)");
 
 
 
@@ -3731,9 +3750,11 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     },
                     padding: {
                         left: 100,
-                        right: 10
+                        right: 10,
+                        bottom: 40
                     }
                 });
+                d3.select(".c3-legend-item .c3-legend-item-2017 .c3-legend-item-2018 .c3-legend-item-2019"). style("float", "right").attr("transform", "translate(0,7)");
 
 
             });
