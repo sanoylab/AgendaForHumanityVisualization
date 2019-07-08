@@ -807,7 +807,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
 
                                         <div id="y2016" class="row">
                                             <div class="col-md-4">
-                                                <div id="charts_reported_2016"></div>
+                                                <div id="charts_reported_2016" ></div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div id="charts_reported_2017"></div>
@@ -1844,7 +1844,6 @@ th[role=columnheader]:not(.no-sort):hover:after {
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
-
                 let total=0;
                 
                 d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php', function (crises) {
@@ -1867,10 +1866,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                                 }
 
                             });
-                            //chart     
-
-
-                               
+                            //chart                               
 
                             
 
@@ -1950,8 +1946,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
             var spinner = new Spinner(opts).spin(target);
             var reported = ['Reported'],
                 notreported = ['Not reported'];
-                let total =0;
-                
+                let total =0;                
                 d3.json('https://www.agendaforhumanity.org/viz_endpoint/dashboard/reported.php', function (crises) {
 
                     crises.forEach(function (element, index) {
