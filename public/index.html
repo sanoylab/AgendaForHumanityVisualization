@@ -422,6 +422,11 @@ th[role=columnheader]:not(.no-sort):hover:after {
 .c3-legend-item-2018{
     margin-top: 100px;
 }
+.c3-axis-x text 
+{
+  font-size: 12px; 
+  font-family: 'Roboto', sans-serif;
+}
     </style>
     <link rel="stylesheet" type="text/css" href="src/css/component.css" />
     <script src="src/js/snap.svg-min.js"></script>
@@ -5021,7 +5026,9 @@ th[role=columnheader]:not(.no-sort):hover:after {
                         total.push(Number(element['Total']));
                     }
                 });
+                //console.log(total.sort());
                 if (challengeID.length > 1 && total.length > 1) {
+                    total.sort(function(a,b) { return b-a; });
                     $("#chart_challenges").fadeIn(1000);
                     c3.generate({
                         bindto: '#chart_challenges',
@@ -5055,7 +5062,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             x: {
                                 type: 'category',
                                 tick: {
-                                    rotate: 75,
+                                    rotate: 5,
                                     multiline: true
                                 }
                             },
