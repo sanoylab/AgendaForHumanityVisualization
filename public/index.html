@@ -4035,6 +4035,9 @@ th[role=columnheader]:not(.no-sort):hover:after {
         function PopulateChallengeDetail(transformation, year, colorname) {
             var target = document.getElementById('chart-challenge-detail');
             var spinner = new Spinner(opts).spin(target);
+            Array.prototype.insert = function ( index, item ) {
+    this.splice( index, 0, item );
+};
             d3.json('https://www.agendaforhumanity.org/viz_endpoint/challenges/detail.php', function (crises) {
                 spinner.stop();
                 var transformation_short = ['Transformation_Short'],
@@ -4055,6 +4058,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     $(".challenges_title").html("Challenges");
                     $("#chart-challenge-detail").fadeIn(1000);
                     total.sort(function(a,b) { return b-a; });
+                    total.insert(0, 'Total');
                     challenge_chart = c3.generate({
                         bindto: '#chart-challenge-detail',
                         data: {
@@ -5014,12 +5018,15 @@ th[role=columnheader]:not(.no-sort):hover:after {
         function PopulateChallenge(year) {
             var target = document.getElementById('chart_challenges');
             var spinner = new Spinner(opts).spin(target);
+            Array.prototype.insert = function ( index, item ) {
+    this.splice( index, 0, item );
+};
             d3.json('https://www.agendaforhumanity.org/viz_endpoint/challenges/get.php', function (crises) {
                 spinner.stop();
                 var challengeID = ['ChallengeID'],
                     challengesShortCode = ['ChallengesShortCode'],
                     reportingYear = ['ReportingYear'],
-                    total = ['Total'];
+                    total = [];
                 crises.forEach(function (element, index) {
                     if (element['ReportingYear'] == year) {
                         challengeID.push([element['ChallengeID']]);
@@ -5030,6 +5037,8 @@ th[role=columnheader]:not(.no-sort):hover:after {
                 //console.log(total.sort());
                 if (challengeID.length > 1 && total.length > 1) {
                     total.sort(function(a,b) { return b-a; });
+                    total.insert(0, 'Total');
+                    console.log(total);
                     $("#chart_challenges").fadeIn(1000);
                     c3.generate({
                         bindto: '#chart_challenges',
