@@ -4042,7 +4042,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                 spinner.stop();
                 var transformation_short = ['Transformation_Short'],
 
-                    challengesShortCode = ['ChallengesShortCode'],
+                    challengesShortCode = [],
                     reportingYear = ['ReportingYear'],
                     total = [];
                 crises.forEach(function (element, index) {
@@ -4097,6 +4097,9 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             columns: [challengesShortCode, total],
                             labels: true,
                         },
+                        size: {
+                    height: 500,
+                },
                         legend: {
                             show: false
                         },
@@ -4114,7 +4117,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             x: {
                                 type: 'category',
                                 tick: {
-                                    rotate: 7,
+                                    rotate: 5,
                                     multiline: true
                                 }
                             },
@@ -5107,6 +5110,10 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             labels: true,
                            
                         },
+                        size: {
+                    height: 500,
+                },
+                        
                         legend: {
                             show: false
                         },
@@ -5124,7 +5131,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             x: {
                                 type: 'category',
                                 tick: {
-                                    rotate: 17,
+                                    rotate: 5,
                                     multiline: true
                                 }
                             },
