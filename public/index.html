@@ -5062,7 +5062,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             x: {
                                 type: 'category',
                                 tick: {
-                                    rotate: 5,
+                                    rotate: 7,
                                     multiline: true
                                 }
                             },
@@ -5472,7 +5472,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     .data(words)
                     .enter().append("text")
                     .style("font-size", function (d) {
-                        return d.size;
+                        return d.size +"px";
                     })
                     .style("fill", randomColor)
                     .attr("text-anchor", "middle")
