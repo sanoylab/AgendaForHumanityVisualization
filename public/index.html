@@ -4054,6 +4054,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     $(".challenges_title").show();
                     $(".challenges_title").html("Challenges");
                     $("#chart-challenge-detail").fadeIn(1000);
+                    total.sort(function(a,b) { return b-a; });
                     challenge_chart = c3.generate({
                         bindto: '#chart-challenge-detail',
                         data: {
@@ -4079,7 +4080,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             x: {
                                 type: 'category',
                                 tick: {
-                                    rotate: 75,
+                                    rotate: 7,
                                     multiline: true
                                 }
                             },
@@ -5037,13 +5038,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             type: 'bar',
                             columns: [challengesShortCode, total],
                             labels: true,
-                            labels: {
-                                format: function (v, id, i, j) {
-
-                                    return truncate(v);
-                                    // return v.substring(0,5)+"...";
-                                }
-                            }
+                           
                         },
                         legend: {
                             show: false
@@ -5603,7 +5598,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     .data(words)
                     .enter().append("text")
                     .style("font-size", function (d) {
-                        return (d.size);
+                        return (d.size +"px");
                     })
                     .style("fill", randomColor)
                     .attr("text-anchor", "middle")
