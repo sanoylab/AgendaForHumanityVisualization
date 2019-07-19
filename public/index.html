@@ -4054,11 +4054,41 @@ th[role=columnheader]:not(.no-sort):hover:after {
                     }
                 });
                 if (challengesShortCode.length > 1 && total.length > 1) {
+
+                    for (var i = 1; i < total.length; i++) 
+                        {
+                            if (total[i] > total[0]) 
+                            {
+                            //move current element to the first position
+                            total.unshift(total.splice(i,1)[0]);
+                            challengesShortCode.unshift(challengesShortCode.splice(i,1)[0]);
+                            } 
+                            else if (total[i] < total[i-1]) 
+                            {
+                            //leave current element where it is
+                            continue;
+                            } 
+                            else {
+                            //find where element should go
+                            for (var j = 1; j < i; j++) {
+                                if (total[i] < total[j-1] && total[i] >= total[j]) 
+                                {
+                                //move element
+                                total.splice(j,0,total.splice(i,1)[0]);
+                                challengesShortCode.splice(j,0,challengesShortCode.splice(i,1)[0]);
+                                }
+                            }
+                            }
+                        }
+                      
+                        total.insert(0, 'Total');
+                        challengesShortCode.insert(0, 'ChallengesShortCode');
+
+
                     $(".challenges_title").show();
                     $(".challenges_title").html("Challenges");
                     $("#chart-challenge-detail").fadeIn(1000);
-                    total.sort(function(a,b) { return b-a; });
-                    total.insert(0, 'Total');
+                   
                     challenge_chart = c3.generate({
                         bindto: '#chart-challenge-detail',
                         data: {
@@ -5018,27 +5048,55 @@ th[role=columnheader]:not(.no-sort):hover:after {
         function PopulateChallenge(year) {
             var target = document.getElementById('chart_challenges');
             var spinner = new Spinner(opts).spin(target);
-            Array.prototype.insert = function ( index, item ) {
-    this.splice( index, 0, item );
-};
+
             d3.json('https://www.agendaforhumanity.org/viz_endpoint/challenges/get.php', function (crises) {
                 spinner.stop();
                 var challengeID = ['ChallengeID'],
-                    challengesShortCode = ['ChallengesShortCode'],
+                    challengesShortCode = [],
                     reportingYear = ['ReportingYear'],
                     total = [];
                 crises.forEach(function (element, index) {
                     if (element['ReportingYear'] == year) {
                         challengeID.push([element['ChallengeID']]);
-                        challengesShortCode.push([element['ChallengesShortCode']]);
+                        challengesShortCode.push(element['ChallengesShortCode']);
                         total.push(Number(element['Total']));
                     }
                 });
+                Array.prototype.insert = function ( index, item ) {
+                    this.splice( index, 0, item );
+                };
                 //console.log(total.sort());
                 if (challengeID.length > 1 && total.length > 1) {
-                    total.sort(function(a,b) { return b-a; });
-                    total.insert(0, 'Total');
-                    console.log(total);
+                   
+                    for (var i = 1; i < total.length; i++) 
+                        {
+                            if (total[i] > total[0]) 
+                            {
+                            //move current element to the first position
+                            total.unshift(total.splice(i,1)[0]);
+                            challengesShortCode.unshift(challengesShortCode.splice(i,1)[0]);
+                            } 
+                            else if (total[i] < total[i-1]) 
+                            {
+                            //leave current element where it is
+                            continue;
+                            } 
+                            else {
+                            //find where element should go
+                            for (var j = 1; j < i; j++) {
+                                if (total[i] < total[j-1] && total[i] >= total[j]) 
+                                {
+                                //move element
+                                total.splice(j,0,total.splice(i,1)[0]);
+                                challengesShortCode.splice(j,0,challengesShortCode.splice(i,1)[0]);
+                                }
+                            }
+                            }
+                        }
+                      
+                        total.insert(0, 'Total');
+                        challengesShortCode.insert(0, 'ChallengesShortCode');
+                      
                     $("#chart_challenges").fadeIn(1000);
                     c3.generate({
                         bindto: '#chart_challenges',
@@ -5066,7 +5124,7 @@ th[role=columnheader]:not(.no-sort):hover:after {
                             x: {
                                 type: 'category',
                                 tick: {
-                                    rotate: 7,
+                                    rotate: 17,
                                     multiline: true
                                 }
                             },
