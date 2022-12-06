@@ -9,7 +9,7 @@
   "author": "Yonas Yeneneh",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0"
